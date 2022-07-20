@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".androidTest.component.TestFragmentActivity">
+
+
+    <LinearLayout
+        android:id="@+id/ly_content1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/bt_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btAdd"
+            android:layout_marginLeft="10dp"
+            android:text="add"/>
+
+        <Button
+            android:id="@+id/bt_hide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:onClick="btHid"
+            android:text="hide"/>
+
+        <Button
+            android:id="@+id/bt_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:onClick="btShow"
+            android:text="show"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_content2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ly_content1"
+        android:layout_marginTop="10dp">
+
+
+        <Button
+            android:id="@+id/bt_detach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btDetach"
+            android:layout_marginLeft="10dp"
+            android:text="detach"/>
+
+        <Button
+            android:id="@+id/bt_attach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btAttach"
+            android:layout_marginLeft="10dp"
+            android:text="attach"/>
+
+        <Button
+            android:id="@+id/bt_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="btRemove"
+            android:layout_marginLeft="10dp"
+            android:text="remove"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_con"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_content2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

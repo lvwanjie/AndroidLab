@@ -4,7 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/drawable/red_boder_bg.xml" value="0.16574074074074074" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/drawable/red_border_bg.xml" value="0.1638888888888889" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/activity_intent_service.xml" value="0.24583333333333332" />
         <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/activity_main.xml" value="0.14351851851851852" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/activity_test_aidl.xml" value="0.18020833333333333" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/activity_test_fragment.xml" value="0.24947916666666667" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/activity_test_glide.xml" value="0.196875" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/activity_test_image.xml" value="0.18020833333333333" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/activity_test_list_view.xml" value="0.1703125" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/activity_test_recycler_view.xml" value="0.221875" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/activity_test_view_model.xml" value="0.16614583333333333" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/fragment_layout.xml" value="0.159375" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/main_page_item.xml" value="0.2078125" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/notifition_layout.xml" value="0.16614583333333333" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/widget_test_list_view_item.xml" value="0.18697916666666667" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/widget_test_rc_item_view.xml" value="0.19791666666666666" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/widget_test_rc_item_view_2.xml" value="0.221875" />
+        <entry key="..\:/android_work_2022/AndroidLab/app/src/main/res/layout/widgt_test_rc_item_view.xml" value="0.221875" />
       </map>
     </option>
   </component>

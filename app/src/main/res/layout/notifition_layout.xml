@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/update_push"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/icon_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp" />
+
+        <ImageView
+            android:id="@+id/icon_miui12"
+            android:layout_width="29dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="6dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_toEndOf="@id/icon_container"
+        android:layout_toRightOf="@id/icon_container">
+        <LinearLayout
+            android:id="@+id/content_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toStartOf="@id/button"
+            android:layout_marginEnd="5dp"
+            android:layout_toLeftOf="@id/button"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:textStyle="bold"
+                android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent.Title" />
+            <ImageView
+                android:id="@+id/icon_list"
+                android:layout_width="wrap_content"
+                android:scaleType="fitStart"
+                android:layout_marginTop="8dp"
+                android:layout_height="16dp"/>
+            <TextView
+                android:id="@+id/body"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/button"
+            android:gravity="center"
+            android:layout_width="72dp"
+            android:layout_height="28.7dp"
+            android:layout_centerVertical="true"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="8dp"
+            android:background="#f00"
+            android:textColor="#ffffff"
+            android:textSize="13dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

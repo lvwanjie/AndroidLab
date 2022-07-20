@@ -3,6 +3,7 @@
     package="com.lvwanjie.myapplication">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,14 +11,81 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".androidTest.widget.testSp.TestSpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.widget.testIntentService.IntentServiceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.other.huapeng.HpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.widget.testDialog.TestDialogActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.jetpack.TestViewModelActivity"
+            android:exported="true" /> <!-- <activity -->
+        <!-- android:name=".androidTest.thirdLib.testGlide.TestGlideActivity" -->
+        <!-- android:exported="true" /> -->
+        <activity
+            android:name=".androidTest.thirdLib.testRetorfit.TestRetrofitActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.widget.testAsyncTask.TestAsyncTaskActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.thirdLib.testMMKV.TestMMKVActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.thirdLib.testOkhttp.OkHttpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.other.whiteScreen.TestLaunchWhiteScreen"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.thirdLib.TestLeakCanaryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.widget.TestImageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.other.aidltest.TestAidlActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.component.TestFragmentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.widget.testListView.TestListViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.widget.testRecyclerView.TestRecyclerViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/LaunchTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".androidTest.widget.testIntentService.MyIntentService"
+            android:exported="false" />
+        <service
+            android:name=".androidTest.other.aidltest.TestBinderService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".androidTest.other.aidltest.TestAidlService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="androidlab.aidl" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
