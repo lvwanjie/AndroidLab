@@ -71,9 +71,7 @@ class Test {
         ReadWriteLock readWriteLock;
         CopyOnWriteArrayList copyOnWriteArrayList =new CopyOnWriteArrayList();
         copyOnWriteArrayList.add("");
-        copyOnWriteArrayList.remove()
         ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(3);
-        arrayBlockingQueue.put("");
         Lock lock= new ReentrantLock();
         Condition condition =  lock.newCondition();
         try {
@@ -102,13 +100,11 @@ class Test {
             }
         }
         ThreadPoolExecutor executor;
-        executor.shutdownNow();
 
         Thread.interrupted();
         Thread thread = new Thread();
         thread.isInterrupted();
         thread.interrupt();
-        Thread.sleep(1000);
     }
 
     public static void testLinkedList(){
