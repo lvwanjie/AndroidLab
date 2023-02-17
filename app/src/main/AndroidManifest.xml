@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".androidTest.other.testPath.TestPathActivity"
+            android:exported="false" />
+        <activity
             android:name=".androidTest.widget.testEditText.TestInputFilterActivity"
             android:exported="false" />
         <activity

@@ -26,6 +26,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+//    flavorDimensions "default"
+//
+//    productFlavors {
+//        //渠道包
+//        app_360 {
+//            manifestPlaceholders = [app_name: "360渠道包", channel: "app_360"]
+//        }
+//        app_qq {
+//            manifestPlaceholders = [app_name: "QQ渠道包", channel: "qq"]
+//        }
+//    }
 }
 
 dependencies {
