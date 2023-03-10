@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lvwanjie.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -9,13 +11,26 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="false"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".androidTest.widget.testViewStub.TestViewStubActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.widget.TestCircleImgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.jetpack.testRoom.TestRoomActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.thirdLib.testExoPlayer.PlayerActivity"
+            android:exported="true" />
+        <activity
             android:name=".androidTest.other.testPath.TestPathActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".androidTest.widget.testEditText.TestInputFilterActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".androidTest.widget.testSp.TestSpActivity"
             android:exported="true" />
@@ -79,7 +94,7 @@
 
         <service
             android:name=".androidTest.widget.testIntentService.MyIntentService"
-            android:exported="false" />
+            android:exported="true" />
         <service
             android:name=".androidTest.other.aidltest.TestBinderService"
             android:enabled="true"
