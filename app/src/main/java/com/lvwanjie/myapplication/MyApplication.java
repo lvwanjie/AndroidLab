@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.tencent.mmkv.MMKV;
 
+import org.greenrobot.eventbus.EventBus;
+
 public class MyApplication extends Application {
 
     @Override
@@ -11,5 +13,6 @@ public class MyApplication extends Application {
         super.onCreate();
 
         MMKV.initialize(this);
+//        EventBus.builder().addIndex(new ).installDefaultEventBus()
     }
 }
