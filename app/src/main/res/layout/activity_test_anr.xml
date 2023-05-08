@@ -7,8 +7,30 @@
     tools:context=".androidTest.other.testAnr.TestAnrActivity">
 
     <Button
+        android:id="@+id/bt_sleep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="create task"
         android:onClick="btClick"/>
+
+    <Button
+        android:id="@+id/bt_busy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_sleep"
+        android:layout_marginTop="10dp"
+        android:text="main_busy"
+        android:onClick="mainBusy"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_busy"
+        android:layout_marginTop="10dp"
+        android:text="click" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
