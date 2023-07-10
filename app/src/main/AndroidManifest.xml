@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/apk/distribution"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.lvwanjie.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+
 
     <application
         android:name=".MyApplication"
-        android:allowBackup="false"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="false"
         android:testOnly="false"
-        android:theme="@style/Theme.MyApplication">
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".androidTest.other.testH5.TestH5CameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.other.FileSave.FileSaveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.other.TestDecodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.widget.TestDrawable.TestSaveBitmapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.widget.testWebview.TestWebViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".androidTest.widget.TestDrawable.TestInsetDrawableActivity"
             android:exported="false" />
@@ -114,6 +137,7 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".androidTest.other.testAnr.GenerateAnrService" />
         <service
             android:name=".androidTest.widget.testIntentService.MyIntentService"
             android:exported="false" />

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html5调用摄像头并拍照</title>
+<meta content="" name="Keywords" />
+<meta content="" name="Description"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no, email=no">
+<meta name="HandheldFriendly" content="true" />
+</head>
+<body>
+
+
+<style type="text/css">
+*{  padding:0; margin:0; }
+body{ padding:0 10px }
+h1,h3,h4{ margin:10px 0; }
+#video{ background:#000; display:block; }
+#snap{ width:100px; height:40px; line-height:40px; margin:10px 0;     }
+#photo{ width:320px; height:320px;  background-repeat:no-repeat; background:#000 }
+#text{ width:320px; height:200px;  }
+</style>
+
+<h1>html5调用摄像头并拍照</h1>
+<h3 id="support"></h3>
+<video id="video" width="320" height="320"></video>       
+<button id="snap" >拍照</button>        
+<canvas id="canvas" style="display:none" width="320" height="320"></canvas> 
+<div id="photo"></div>
+<h4>获取的base64位PNG图像</h4>
+<textarea id="text"></textarea>
+<script>
+
+	//判断浏览器是否支持HTML5 Canvas
+	window.onload = function () {
+	try {
+      requestPermission();
+	}
+	catch (e) {           
+		document.getElementById("support").innerHTML = "浏览器不支持HTML5 CANVAS";}
+	    alert(e);
+
+	};
+
+function getDevicePermission(constraints) {
+      	    alert("getDevicePermission");
+
+  return global.navigator.mediaDevices
+    .getUserMedia(constraints)
+    .then(stream => {
+      	    alert("su");
+
+      if (stream) {
+        stopStreamTracks(stream);
+        return true;
+      }
+      return Promise.reject(new Error('EmptyStreamError'));
+    })
+    .catch(errMsg => {
+          	    alert("getDevicePermission_catch");
+
+      if (errMsg && 'NotAllowedError' === errMsg.name) {
+        return false;
+      }
+      return Promise.reject(errMsg);
+    });
+}
+
+function requestPermission() {
+  return getDevicePermission({ video: true, audio: true })
+    .catch(() => getDevicePermission({ video: false, audio: true }))
+    .catch(() => getDevicePermission({ video: true, audio: false }))
+    .catch(() => true);
+}
+
+
+
+ </script> 
+
+
+</body>
+</html>
+

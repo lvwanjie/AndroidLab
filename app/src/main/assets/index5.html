@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>拍照</title>
+ <style type="text/css">
+        div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+ <button id="switchCamera">打开/切换摄像头</button>
+ <button id="closeCamera">关闭摄像头</button>
+ <button id="takePicture">拍照</button>
+</div>
+<video id="video" width="240" height="160" autoplay></video>
+<canvas id="canvas" width="240" height="160"></canvas>
+<script>
+        const WIDTH = 240
+        const HEIGHT = 160
+        function getUserMedia(constraints, success, error) {
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
+            } else if (navigator.webkitGetUserMedia) {
+                navigator.webkitGetUserMedia(constraints, success, error)
+            } else if (navigator.mozGetUserMedia) {
+                navigator.mozGetUserMedia(constraints, success, error);
+            } else if (navigator.getUserMedia) {
+                navigator.getUserMedia(constraints, success, error);
+            }
+        }
+        function openCameraFn() {
+            if (navigator.mediaDevices.getUserMedia ||
+                navigator.getUserMedia ||
+                navigator.webkitGetUserMedia ||
+                navigator.mozGetUserMedia) {
+                getUserMedia({
+                    audio: false,
+                    video: {
+                        width: WIDTH,
+                        height: HEIGHT,
+                        deviceId: videoDevices[videoDeviceIndex]
+                    }
+                }, (stream)=>{
+                    video.srcObject = stream;
+                    video.play();
+                }, (err)=>{
+                    console.log('开启摄像头失败：' + err)
+                })
+            }
+        }
+        function closeCameraFn() {
+            if (video.srcObject) {
+                try {
+                    let tracks = video.srcObject.getTracks();
+                    for (let track of tracks) {
+                        track.stop();
+                    }
+                } catch(err) {
+                    console.log(err)
+                }
+            }
+        }
+        function dataURLtoFile(dataUrl, fileName) {
+            if (!fileName) {
+                return null;
+            }
+            const arr = dataUrl.split(',');
+            const mime = arr[0].match(/:(.*?);/)[1];
+            const bytes = window.atob(arr[1])
+            // 处理异常,将ascii码小于0的转换为大于0
+            const ab = new ArrayBuffer(bytes.length);
+            const ia = new Uint8Array(ab);
+            for (let i = 0; i < bytes.length; i++) {
+                ia[i] = bytes.charCodeAt(i);
+            }
+            if (fileName.indexOf(".") < 0) {
+                fileName += `.${mime.replace("image/", "")}`
+            }
+            return new File([ab], fileName, { type: mime });
+        }
+        let videoDevices = []
+        let videoDeviceIndex = 0
+
+        let video = document.getElementById("video")
+        let canvas = document.getElementById("canvas")
+        let context2d = canvas.getContext("2d")
+        // 获取摄像头设备信息
+        try {
+            navigator.mediaDevices.enumerateDevices().then(function(devices){
+                videoDevices = []
+                devices.forEach(function(device) {
+                    let deviceKind = device.kind
+                    if (deviceKind.match(/^video.*/)) {
+                        videoDevices.push(device.deviceId)
+                    }
+                })
+            })
+        } catch (err) {
+            console.log('获取设备失败：' + JSON.stringify(err))
+        }
+        document.getElementById("switchCamera").addEventListener('click', function (ev) {
+            closeCameraFn()
+            openCameraFn()
+            videoDeviceIndex = (videoDeviceIndex++) % videoDevices.length
+        })
+        document.getElementById("closeCamera").addEventListener('click', function (ev) {
+            closeCameraFn()
+        })
+        document.getElementById("takePicture").addEventListener('click', function (ev) {
+            context2d.drawImage(video, 0, 0, WIDTH, HEIGHT)
+            let picture = canvas.toDataURL("image/png")
+            let pictureFile = dataURLtoFile(picture, Date.now()+'.png')
+        })
+    </script>
+</body>
+</html>

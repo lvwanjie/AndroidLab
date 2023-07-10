@@ -6,6 +6,17 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.lvwanjie.myapplication.R;
+import com.lvwanjie.myapplication.javaTest.Test;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Vector;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class TestAsyncTaskActivity extends AppCompatActivity {
 
@@ -28,6 +39,30 @@ public class TestAsyncTaskActivity extends AppCompatActivity {
 
           }
       });
+    }
+
+    public interface I {
+        int a = 0;
+        void i();
+    }
+    public abstract class Test implements I {
+
+        public abstract void i();
+
+        private void a(){
+            Vector vector;
+            ArrayList arrayList;
+            LinkedList list;
+
+
+           new  BufferedReader(new InputStreamReader(new InputStream() {
+               @Override
+               public int read() throws IOException {
+                   return 0;
+               }
+           }),4);
+
+        }
     }
 
 

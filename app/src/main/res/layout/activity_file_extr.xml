@@ -4,34 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".androidTest.other.testAnr.TestAnrActivity">
+    tools:context=".androidTest.other.FileSave.FileSaveActivity">
 
     <Button
-        android:id="@+id/bt_sleep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="create task"
-        android:onClick="btClick"/>
+        android:text="getPermission"
+        android:onClick="getPermission"/>
 
-    <Button
-        android:id="@+id/bt_busy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bt_sleep"
-        android:layout_marginTop="10dp"
-        android:text="main_busy"
-        android:onClick="mainBusy"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bt_busy"
-        android:layout_marginTop="10dp"
-        android:onClick="startService"
-        android:text="startService" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:text="saveFile"
+        android:onClick="saveFile"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

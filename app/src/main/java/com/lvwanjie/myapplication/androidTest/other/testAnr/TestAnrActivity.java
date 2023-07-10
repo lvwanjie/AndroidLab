@@ -2,6 +2,7 @@ package com.lvwanjie.myapplication.androidTest.other.testAnr;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -40,6 +41,11 @@ public class TestAnrActivity extends AppCompatActivity {
 
     public void mainBusy(View view){
         print();
+    }
+
+    public void startService(View view){
+        Intent intent  = new Intent(this,GenerateAnrService.class);
+        startService(intent);
     }
 
     private void print(){

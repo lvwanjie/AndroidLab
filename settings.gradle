@@ -4,6 +4,21 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+//        maven {
+//            allowInsecureProtocol = true
+//            url '/Users/lvwanjie/Documents/work/project/HxhSdk/repo/'
+//        }
+        maven {
+            allowInsecureProtocol = true
+            url 'http://10.100.19.220:8081/nexus/content/repositories/releases/'
+        }
+        maven {
+            allowInsecureProtocol = true
+            url 'https://jitpack.io'}
+
+
+
+
     }
 }
 rootProject.name = "My Application"
