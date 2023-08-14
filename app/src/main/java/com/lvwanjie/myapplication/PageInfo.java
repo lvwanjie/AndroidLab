@@ -5,6 +5,8 @@ import androidx.annotation.ColorInt;
 public class PageInfo {
 
     public static String pages[] = {
+            "com.lvwanjie.myapplication.androidTest.other.filePath.TestAndroidPathActivity",
+            "com.lvwanjie.myapplication.androidTest.other.testScheme.TestSchemeActivity",
             "com.lvwanjie.myapplication.androidTest.other.testH5.TestH5CameraActivity",
             "com.lvwanjie.myapplication.androidTest.other.FileSave.FileSaveActivity",
             "com.lvwanjie.myapplication.androidTest.other.TestDecodeActivity",

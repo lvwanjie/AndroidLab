@@ -4,15 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".androidTest.other.filePath.FileSaveActivity">
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="getPermission"
-        android:onClick="getPermission"/>
+    tools:context=".androidTest.other.filePath.TestAndroidPathActivity">
 
 
     <Button
@@ -20,7 +12,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"
-        android:text="saveFile"
-        android:onClick="saveFile"/>
+        android:onClick="btClick"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

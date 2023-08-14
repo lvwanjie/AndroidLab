@@ -1,22 +1,19 @@
-package com.lvwanjie.myapplication.androidTest.other.FileSave;
+package com.lvwanjie.myapplication.androidTest.other.filePath;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 
-import com.bumptech.glide.util.Executors;
 import com.lvwanjie.myapplication.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.security.Permission;
 
 public class FileSaveActivity extends AppCompatActivity {
 

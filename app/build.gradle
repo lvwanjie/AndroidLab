@@ -91,10 +91,13 @@ dependencies {
     annotationProcessor "org.greenrobot:eventbus-annotation-processor:$eventbus_version"
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
 
-    implementation('com.credithc:hc-hxh-sdk:v1.0.10'){
+    implementation('com.credithc:hc-hxh-sdk:v1.0.16'){
     }
 
     implementation 'com.github.tbruyelle:rxpermissions:0.12'
+
+//    api 'com.tencent.tbs:tbssdk:44286'
+
 
 
 //    configurations {

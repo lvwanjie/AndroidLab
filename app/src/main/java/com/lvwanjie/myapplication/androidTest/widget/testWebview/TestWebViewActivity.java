@@ -22,5 +22,7 @@ public class TestWebViewActivity extends AppCompatActivity {
 
 
         webView.loadUrl("https://mail.sina.cn/?vt=4");
+        com.tencent.smtt.sdk.WebView webView1 = new com.tencent.smtt.sdk.WebView(this);
+//        webView1.
     }
 }

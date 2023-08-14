@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.webkit.PermissionRequest;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -18,10 +19,13 @@ import android.webkit.WebView;
 import com.hxh.shop.authentication.utils.AuthFlowBasicCheckUtil;
 import com.hxh.shop.main.activity.CML_BorrowMoneyActivity;
 import com.lvwanjie.myapplication.R;
+import com.lvwanjie.myapplication.androidTest.thirdLib.testDagger.A;
 import com.tbruyelle.rxpermissions3.Permission;
 import com.tbruyelle.rxpermissions3.RxPermissions;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import io.reactivex.rxjava3.functions.Consumer;
 
@@ -51,8 +55,9 @@ public class TestH5CameraActivity extends AppCompatActivity {
             @Override
             public void onPermissionRequest(PermissionRequest request) {
                 Log.i("TestH5CameraActivity", "onPermissionRequest:ss ");
+                String permissions[] = getNaPermissionRequest(request);
                 RxPermissions rxPermissions = new RxPermissions(TestH5CameraActivity.this);
-                rxPermissions.request(Manifest.permission.CAMERA)
+                rxPermissions.request(permissions)
                         .subscribe(new Consumer<Boolean>() {
                             @Override
                             public void accept(Boolean permission) throws Exception {
@@ -67,8 +72,31 @@ public class TestH5CameraActivity extends AppCompatActivity {
 //        myWebView.loadUrl(webUrl);
         webView.loadUrl("file:android_asset/index5.html");
 
+    }
 
+    private String[] getNaPermissionRequest(PermissionRequest request){
+        String accesses[] = request.getResources();
+        List<String> list = new ArrayList();
+        for(int i=0;i< accesses.length;i++){
+            String access = accesses[i];
+            if(TextUtils.equals(access,PermissionRequest.RESOURCE_VIDEO_CAPTURE)){
+                list.add(Manifest.permission.CAMERA);
+                list.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            }
+        }
+        return list.toArray(new String[list.size()]);
+    }
 
+    public void btClick(View view){
+        RxPermissions rxPermissions = new RxPermissions(TestH5CameraActivity.this);
+        rxPermissions.request(Manifest.permission.CAMERA)
+                .subscribe(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean permission) throws Exception {
+                        if(permission){
+                        }
+                    }
+                });
     }
 
 
