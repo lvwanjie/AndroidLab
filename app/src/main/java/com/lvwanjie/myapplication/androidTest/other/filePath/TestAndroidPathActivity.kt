@@ -35,7 +35,20 @@ class TestAndroidPathActivity : AppCompatActivity() {
         var externalFileDirs = Arrays.toString(getExternalFilesDirs(Environment.DIRECTORY_DOWNLOADS))
         Log.i(TAG, "path: $cacheDir \n $externalCacheDir \n $externalCacheDirs \n $fileDir \n $externalFileDir \n $externalFileDirs")
 
+        // /data
+        var dataDirPath = Environment.getDataDirectory().path
+        // /data/cache
+        var downloadCachePath = Environment.getDownloadCacheDirectory().path
+        // /system
+        var rootDir = Environment.getRootDirectory().path
+        // /storage
+        var storageDir = Environment.getStorageDirectory().path
+        // /storage/emulated/0
+        var externalStorage = Environment.getExternalStorageDirectory().path
+        // /storage/emulated/0/Movies
+        var externalStoragePublic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES)
 
+        Log.i(TAG, "Environment: $dataDirPath \n $downloadCachePath \n $rootDir \n $storageDir \n $externalStorage \n $externalStoragePublic")
 
 
     }

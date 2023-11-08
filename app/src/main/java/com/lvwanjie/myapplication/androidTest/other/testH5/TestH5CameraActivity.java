@@ -16,8 +16,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-import com.hxh.shop.authentication.utils.AuthFlowBasicCheckUtil;
-import com.hxh.shop.main.activity.CML_BorrowMoneyActivity;
+//import com.hxh.shop.authentication.utils.AuthFlowBasicCheckUtil;
+//import com.hxh.shop.main.activity.CML_BorrowMoneyActivity;
 import com.lvwanjie.myapplication.R;
 import com.lvwanjie.myapplication.androidTest.thirdLib.testDagger.A;
 import com.tbruyelle.rxpermissions3.Permission;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import io.reactivex.rxjava3.functions.Consumer;
+//import io.reactivex.rxjava3.functions.Consumer;
 
 
 public class TestH5CameraActivity extends AppCompatActivity {
@@ -57,15 +57,15 @@ public class TestH5CameraActivity extends AppCompatActivity {
                 Log.i("TestH5CameraActivity", "onPermissionRequest:ss ");
                 String permissions[] = getNaPermissionRequest(request);
                 RxPermissions rxPermissions = new RxPermissions(TestH5CameraActivity.this);
-                rxPermissions.request(permissions)
-                        .subscribe(new Consumer<Boolean>() {
-                            @Override
-                            public void accept(Boolean permission) throws Exception {
-                                if(permission){
-                                    request.grant(request.getResources());
-                                }
-                            }
-                        });
+//                rxPermissions.request(permissions)
+//                        .subscribe(new Consumer<Boolean>() {
+//                            @Override
+//                            public void accept(Boolean permission) throws Exception {
+//                                if(permission){
+//                                    request.grant(request.getResources());
+//                                }
+//                            }
+//                        });
 
             }
         });
@@ -89,14 +89,14 @@ public class TestH5CameraActivity extends AppCompatActivity {
 
     public void btClick(View view){
         RxPermissions rxPermissions = new RxPermissions(TestH5CameraActivity.this);
-        rxPermissions.request(Manifest.permission.CAMERA)
-                .subscribe(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean permission) throws Exception {
-                        if(permission){
-                        }
-                    }
-                });
+//        rxPermissions.request(Manifest.permission.CAMERA)
+//                .subscribe(new Consumer<Boolean>() {
+//                    @Override
+//                    public void accept(Boolean permission) throws Exception {
+//                        if(permission){
+//                        }
+//                    }
+//                });
     }
 
 

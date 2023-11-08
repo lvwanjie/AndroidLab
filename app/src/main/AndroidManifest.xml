@@ -104,7 +104,8 @@
             android:exported="false" />
         <activity
             android:name=".androidTest.widget.testDialog.TestDialogActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".androidTest.jetpack.TestViewModelActivity"
             android:exported="false" /> <!-- <activity -->

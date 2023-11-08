@@ -25,4 +25,21 @@
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen">
     <item name="android:windowBackground">@mipmap/bg</item>
         <item name="android:windowFullscreen">true</item></style>
+
+    <style name="BottomSheetDialogFragmentTheme" parent="Theme.Design.BottomSheetDialog">
+<!--        <item name="bottomSheetDialogTheme">@style/RoundBottomDialog</item>-->
+        <!-- 设置为adjustResize -->
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="RoundBottomDialog" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">#80000000</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
+    </style>
 </resources>

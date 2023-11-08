@@ -20,6 +20,6 @@ public class TestDecodeActivity extends AppCompatActivity {
 
     public void decode(){
         String decodeS = TestDecode.decryptBasedDes(s);
-        Log.i(TAG, "decode: ");
+        Log.i(TAG, "decode: "+decodeS);
     }
 }

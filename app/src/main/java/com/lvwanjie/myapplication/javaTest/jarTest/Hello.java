@@ -1,5 +1,8 @@
 package jarTest;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import jarTest.user.Tom;
 
 /**
