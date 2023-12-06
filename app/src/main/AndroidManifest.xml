@@ -19,9 +19,18 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".androidTest.anim.wheelText.TestApngActivity"
+            android:hardwareAccelerated="true"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.anim.wheelText.RaiseLimitAnimTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.anim.wheelText.WheelTextActivity"
+            android:exported="false" />
+        <activity
             android:name=".androidTest.other.filePath.TestAndroidPathActivity"
             android:exported="false" />
-
         <activity
             android:name=".androidTest.other.testScheme.SchemeTargetActivity"
             android:exported="true">
@@ -104,8 +113,7 @@
             android:exported="false" />
         <activity
             android:name=".androidTest.widget.testDialog.TestDialogActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".androidTest.jetpack.TestViewModelActivity"
             android:exported="false" /> <!-- <activity -->

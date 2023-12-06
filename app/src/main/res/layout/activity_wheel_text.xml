@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".androidTest.anim.wheelText.WheelTextActivity">
+
+    <com.lvwanjie.myapplication.androidTest.anim.wheelText.WheelTextVIew
+        android:id="@+id/wheel_textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="hello"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/bt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btClick"/>
+
+    <com.lvwanjie.myapplication.androidTest.anim.wheelText.FloatTextView
+        android:id="@+id/float_text_view"
+        app:layout_constraintLeft_toRightOf="@id/bt"
+        app:layout_constraintBottom_toTopOf="@id/bt"
+        android:layout_width="wrap_content"
+        android:text="abcd"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
