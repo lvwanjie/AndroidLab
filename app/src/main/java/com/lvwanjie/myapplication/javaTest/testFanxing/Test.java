@@ -12,6 +12,8 @@ class Test {
 
     static class Apple extends Fruit{}
 
+    static class RedApple extends Apple{}
+
     static class Orange extends Fruit{}
 
     static class LittleApple extends Apple{}
@@ -31,5 +33,54 @@ class Test {
 //        Fruit f2 = list2.get(0);
 //        Apple apple2 = list2.get(0);
 //        LittleApple littleApple2 = list2.get(0);
+        A<? super Apple> a = new A();
+        a.add(new RedApple());
     }
+
+    public static class A<T>{
+        T t;
+
+        public void add(T t){
+            this.t = t;
+        }
+
+        public T get(){
+            return t;
+        }
+    }
+
+    public void show(A<Apple> a){
+
+        List<? extends Fruit> list = new ArrayList<Apple>();
+        Fruit fruit = list.get(0);
+
+    }
+
+    public <T> void getM(T t){
+
+    }
+
+    public void testShow(){
+        A<Apple> a = new A<Apple>();
+        new Test().show(a);
+    }
+
+    private static interface I{
+        void i();
+    }
+
+    public static class B<E,T> extends A<T> implements I{
+
+        @Override
+        public void add(T t) {
+            super.add(t);
+        }
+
+        @Override
+        public void i() {
+
+        }
+    }
+
+
 }

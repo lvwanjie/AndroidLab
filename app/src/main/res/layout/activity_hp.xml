@@ -6,4 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".androidTest.other.huapeng.HpActivity">
 
+    <View
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:elevation="1dp"
+        android:background="@color/red"
+        />
+    <View
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/black"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

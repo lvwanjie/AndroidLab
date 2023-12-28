@@ -5,6 +5,7 @@ import androidx.annotation.ColorInt;
 public class PageInfo {
 
     public static String pages[] = {
+            "com.lvwanjie.myapplication.kotlinTest.TestKotlinActivity",
             "com.lvwanjie.myapplication.androidTest.anim.wheelText.TestApngActivity",
             "com.lvwanjie.myapplication.androidTest.anim.wheelText.RaiseLimitAnimTestActivity",
             "com.lvwanjie.myapplication.androidTest.anim.wheelText.WheelTextActivity",
