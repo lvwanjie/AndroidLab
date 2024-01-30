@@ -5,6 +5,9 @@ import androidx.annotation.ColorInt;
 public class PageInfo {
 
     public static String pages[] = {
+            "com.lvwanjie.myapplication.androidTest.other.testmeasure.TestMeasureActivity",
+            "com.lvwanjie.myapplication.kotlinTest.testCoroutines.TestCoroutinesActivity",
+            "com.lvwanjie.myapplication.androidTest.thirdLib.testRetorfit.TestKtRetrofitActivity",
             "com.lvwanjie.myapplication.kotlinTest.TestKotlinActivity",
             "com.lvwanjie.myapplication.androidTest.anim.wheelText.TestApngActivity",
             "com.lvwanjie.myapplication.androidTest.anim.wheelText.RaiseLimitAnimTestActivity",

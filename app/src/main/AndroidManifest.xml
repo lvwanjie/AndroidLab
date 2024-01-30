@@ -19,9 +19,21 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
-            android:name=".androidTest.anim.wheelText.TestApngActivity"
-            android:hardwareAccelerated="true"
+            android:name=".androidTest.other.testmeasure.TestMeasureActivity"
             android:exported="false" />
+        <activity
+            android:name=".kotlinTest.testCoroutines.TestCoroutinesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.thirdLib.testRetorfit.TestKtRetrofitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".kotlinTest.TestKotlinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.anim.wheelText.TestApngActivity"
+            android:exported="false"
+            android:hardwareAccelerated="true" />
         <activity
             android:name=".androidTest.anim.wheelText.RaiseLimitAnimTestActivity"
             android:exported="false" />

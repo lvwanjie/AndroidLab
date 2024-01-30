@@ -135,7 +135,8 @@ public class CustomView extends View {
         }
         path.lineTo(curWaveX,centerPoint.y+radius);
         path.lineTo(startX,centerPoint.y + radius);
-
+        int a = 0;
+        a = a >>> 30;
         return path;
     }
 
