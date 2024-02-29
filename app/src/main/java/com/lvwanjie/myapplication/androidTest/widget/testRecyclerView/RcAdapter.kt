@@ -13,6 +13,8 @@ class RcAdapter(var context: Context) :RecyclerView.Adapter<RecyclerView.ViewHol
 
 
     private  var list :ArrayList<ItemData> = ArrayList()
+    private var list6 = mutableListOf<ItemData>()
+
     init {
         initFakeData()
     }
@@ -24,8 +26,20 @@ class RcAdapter(var context: Context) :RecyclerView.Adapter<RecyclerView.ViewHol
             if(i == 5){
                 itemData.itemType = ItemData.ITEM_TYPE2
             }
+            if(i<6){
+                list6.add(itemData)
+            }
             list.add(itemData)
         }
+    }
+
+
+    public fun remove(pos:Int,count:Int){
+        this.list.removeAll(list6)
+    }
+
+    public fun addAll(){
+        this.list.addAll(0,list6)
     }
 
     fun changFirstItem(){

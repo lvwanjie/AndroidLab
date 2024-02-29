@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
 
@@ -18,6 +19,20 @@
         android:testOnly="false"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
+
+        <activity
+            android:name=".androidTest.jetpack.TestLiveDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".kotlinTest.testFx.TestCopyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.widget.testXD.TestXiDingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".kotlinTest.testImmerse.TestImmerseActivity"
+            android:exported="false"
+            android:theme="@style/myImmerseTestTheme" />
         <activity
             android:name=".androidTest.other.testmeasure.TestMeasureActivity"
             android:exported="false" />
@@ -188,12 +203,15 @@
             android:exported="false" />
         <service
             android:name=".androidTest.other.aidltest.TestAidlService"
-            android:enabled="false"
-            android:exported="false">
+            android:exported="true"
+            android:process=":abc"
+            >
             <intent-filter>
                 <action android:name="androidlab.aidl" />
             </intent-filter>
         </service>
+
+        <service android:name=".androidTest.widget.TestService.TestTaskService"/>
     </application>
 
 </manifest>

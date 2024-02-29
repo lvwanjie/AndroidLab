@@ -1,12 +1,18 @@
 package com.lvwanjie.myapplication.androidTest.widget.TestService;
 
 import android.app.IntentService;
+import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
+import android.os.Environment;
 import android.os.IBinder;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.JobIntentService;
+
+import com.lvwanjie.myapplication.MyApplication;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,19 +27,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-public class TestTaskService extends IntentService {
+public class TestTaskService extends Service {
 
     private ExecutorService executorService;
 
-    private String downloadPath;
+    private String downloadPath = MyApplication.mInstance.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
 
     private List<FileState> fileTasks = new ArrayList<>();
 
 
-    public TestTaskService(String name) {
-        super(name);
-        executorService = Executors.newCachedThreadPool();
-    }
+
 
     public List<FileState> getFileTasks(){
         return fileTasks;
@@ -42,7 +45,9 @@ public class TestTaskService extends IntentService {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return super.onBind(intent);
+        Binder binder = new Binder();
+        Log.i("GetBinder", "onBind: "+binder);
+        return binder;
     }
 
     @Override
@@ -51,10 +56,10 @@ public class TestTaskService extends IntentService {
     }
 
 
-    @Override
-    protected void onHandleIntent(@Nullable Intent intent) {
-
-    }
+//    @Override
+//    protected void onHandleIntent(@Nullable Intent intent) {
+//
+//    }
 
     public void createNewTask(File file){
         FileState fileState = new FileState();

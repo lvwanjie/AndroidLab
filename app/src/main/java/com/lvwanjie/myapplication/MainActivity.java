@@ -54,6 +54,11 @@ public class MainActivity extends FragmentActivity {
 
 
         public MyAdapter(){
+
+            int a = 0;
+            if((a = 3)>0){
+
+            }
             List<String> list = Arrays.asList(PageInfo.pages);
             int color = Color.WHITE;
             for(String str:list){

@@ -42,4 +42,12 @@
         <item name="android:windowSoftInputMode">adjustResize</item>
 <!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
     </style>
+
+    <style name="myImmerseTestTheme" parent="Theme.AppCompat.Empty">
+<!--    windowFullscreen 会将顶部状态栏隐藏，但保留状态栏位置    -->
+<!--        <item name="android:windowFullscreen">true</item>-->
+<!--        会将默认的标题 去除-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
 </resources>
