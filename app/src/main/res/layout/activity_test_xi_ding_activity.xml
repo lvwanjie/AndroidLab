@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:stateListAnimator="@null"
         android:elevation="0dp"
-        android:background="@color/transparent"
+        android:background="#00000000"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -53,8 +53,9 @@
                 android:text="看完会超经典那看完"/>
         </RelativeLayout>
 
-        <net.lucode.hackware.magicindicator.MagicIndicator
+        <LinearLayout
             android:id="@+id/tab_indicator"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:background="#78c"
@@ -75,7 +76,7 @@
         android:layout_height="50dp"
         android:visibility="gone"
         app:layout_anchor="@id/app_bar"
-        android:background="@color/blue"
+        android:background="#78c"
 
         app:layout_behavior="com.lvwanjie.myapplication.androidTest.widget.testXD.TransBehavior">
 

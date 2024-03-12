@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import com.airbnb.lottie.LottieAnimationView;
 import com.lvwanjie.myapplication.R;
 
-import net.ellerton.japng.android.api.PngAndroid;
+//import net.ellerton.japng.android.api.PngAndroid;
 
 public class TestApngActivity extends AppCompatActivity {
 
@@ -33,11 +33,11 @@ public class TestApngActivity extends AppCompatActivity {
 
     public void a(){
         try {
-            Drawable drawable = PngAndroid.readDrawable(this, R.mipmap.heng2);
-            iv.setImageDrawable(drawable);
-            if (drawable instanceof AnimationDrawable) {
-                ((AnimationDrawable)drawable).start();
-            }
+//            Drawable drawable = PngAndroid.readDrawable(this, R.mipmap.heng2);
+//            iv.setImageDrawable(drawable);
+//            if (drawable instanceof AnimationDrawable) {
+//                ((AnimationDrawable)drawable).start();
+//            }
         }catch (Exception e){
 
         }

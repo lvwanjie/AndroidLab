@@ -12,11 +12,11 @@ class RaiseLimitAnimTestActivity : AppCompatActivity() {
 
     }
 
-    private  val raiseLimitAnimWrapper:RaiseLimitAnimWrapper by lazy {
-        RaiseLimitAnimWrapper(findViewById(R.id.card))
-    }
+//    private  val raiseLimitAnimWrapper:RaiseLimitAnimWrapper by lazy {
+//        RaiseLimitAnimWrapper(findViewById(R.id.card))
+//    }
 
     fun btClick(view: View){
-        raiseLimitAnimWrapper.startAnim()
+//        raiseLimitAnimWrapper.startAnim()
     }
 }

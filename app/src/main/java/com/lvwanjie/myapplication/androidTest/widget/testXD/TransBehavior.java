@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -16,7 +17,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import com.google.android.material.appbar.AppBarLayout;
 import com.lvwanjie.myapplication.R;
 
-import net.lucode.hackware.magicindicator.MagicIndicator;
+//import net.lucode.hackware.magicindicator.MagicIndicator;
 
 public class TransBehavior extends CoordinatorLayout.Behavior{
 
@@ -27,7 +28,7 @@ public class TransBehavior extends CoordinatorLayout.Behavior{
 //    private TextView etvShare,etvBack;
     // 如果获取最大滚动距离相关的view发生改变 ，可以设置此为true 就可以重新获取高度了
     private boolean isReset;
-    private MagicIndicator tabIndicator;
+    private LinearLayout tabIndicator;
     private ImageView ivHeadBg;
 
     public TransBehavior(Context context, AttributeSet attributeSet){

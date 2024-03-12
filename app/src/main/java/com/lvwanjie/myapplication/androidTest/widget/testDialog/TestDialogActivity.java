@@ -25,8 +25,8 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.kongzue.dialogx.dialogs.CustomDialog;
-import com.kongzue.dialogx.interfaces.OnBindView;
+//import com.kongzue.dialogx.dialogs.CustomDialog;
+//import com.kongzue.dialogx.interfaces.OnBindView;
 import com.lvwanjie.myapplication.R;
 import com.lvwanjie.myapplication.androidTest.utils.DisplayUtils;
 import com.lvwanjie.myapplication.javaTest.testPattern.FormatCheckUtils;
@@ -113,12 +113,12 @@ public class TestDialogActivity extends AppCompatActivity {
     }
 
     public void customDialogShow(View view){
-        CustomDialog.show(new OnBindView<CustomDialog>(R.layout.dialog_auth_confirm_layout) {
-            @Override
-            public void onBind(CustomDialog dialog, View v) {
-
-            }
-        });
+//        CustomDialog.show(new OnBindView<CustomDialog>(R.layout.dialog_auth_confirm_layout) {
+//            @Override
+//            public void onBind(CustomDialog dialog, View v) {
+//
+//            }
+//        });
     }
 
     public void bindDialog(View view){

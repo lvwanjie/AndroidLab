@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.credithc.common.utils.DeviceUtil;
+//import com.credithc.common.utils.DeviceUtil;
 import com.lvwanjie.myapplication.androidTest.utils.DisplayUtils;
 
 public class FloatTextView extends AppCompatTextView {

@@ -21,6 +21,10 @@ class TestBinderService : Service() {
         return myBinder
     }
 
+    override fun onUnbind(intent: Intent?): Boolean {
+        return true
+    }
+
     private var myBinder = object :Binder(){
 
 

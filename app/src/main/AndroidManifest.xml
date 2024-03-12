@@ -211,7 +211,7 @@
             </intent-filter>
         </service>
 
-        <service android:name=".androidTest.widget.TestService.TestTaskService"/>
+        <service android:exported="false"  android:name=".androidTest.widget.TestService.TestTaskService"/>
     </application>
 
 </manifest>

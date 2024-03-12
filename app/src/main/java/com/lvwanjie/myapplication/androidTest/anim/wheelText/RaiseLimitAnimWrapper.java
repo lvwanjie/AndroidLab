@@ -32,11 +32,11 @@ public class RaiseLimitAnimWrapper {
 
     public RaiseLimitAnimWrapper(View rootView){
         this.rootView = rootView;
-        tvTips2 = rootView.findViewById(R.id.tv_tip2);
-        tvRaiseQuota = rootView.findViewById(R.id.tv_raise_quota);
-        tvRaiseTip = rootView.findViewById(R.id.tv_raise_tip);
-        ivCoinGif = rootView.findViewById(R.id.iv_coin_gif);
-        clQuotaAnimLayout = rootView.findViewById(R.id.cl_quota_anim_layout);
+//        tvTips2 = rootView.findViewById(R.id.tv_tip2);
+//        tvRaiseQuota = rootView.findViewById(R.id.tv_raise_quota);
+//        tvRaiseTip = rootView.findViewById(R.id.tv_raise_tip);
+//        ivCoinGif = rootView.findViewById(R.id.iv_coin_gif);
+//        clQuotaAnimLayout = rootView.findViewById(R.id.cl_quota_anim_layout);
     }
 
     AnimatorSet animatorSet = new AnimatorSet();

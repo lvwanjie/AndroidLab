@@ -6,15 +6,42 @@ import android.os.IBinder
 import android.util.Log
 
 class TestAidlService : Service() {
+    
+    companion object{
+        const val TAG = "TestAidlService.kt"
+    }
 
-    override fun onBind(intent: Intent): IBinder {
-        Log.i("TestAidlService", "onStartCommand: $myBinder")
-        return myBinder
+    override fun onCreate() {
+        Log.i(TAG, "onCreate: ")
+        super.onCreate()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        Log.i(TAG, "onStartCommand: ")
         return super.onStartCommand(intent, flags, startId)
     }
+
+    override fun onBind(intent: Intent): IBinder {
+        Log.i(TAG, "onBind: $myBinder")
+        return myBinder
+    }
+
+    override fun onRebind(intent: Intent?) {
+        Log.i(TAG, "onRebind: $myBinder")
+        super.onRebind(intent)
+    }
+
+    override fun onUnbind(intent: Intent?): Boolean {
+        Log.i(TAG, "onUnbind: ")
+        return true
+    }
+
+    override fun onDestroy() {
+        Log.i(TAG, "onDestroy: ")
+        super.onDestroy()
+    }
+
+
 
     private val myBinder = object :MyManagerService.Stub(){
         override fun basicTypes(

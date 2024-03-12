@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.marginStart
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
 import com.lvwanjie.myapplication.R
 import com.lvwanjie.myapplication.androidTest.widget.testRecyclerView.RcAdapter
-import net.lucode.hackware.magicindicator.MagicIndicator
+//import net.lucode.hackware.magicindicator.MagicIndicator
 
 class TestXiDingActivity : AppCompatActivity() {
 
@@ -38,7 +39,7 @@ class TestXiDingActivity : AppCompatActivity() {
     private val appBarLayout:AppBarLayout by lazy {
         findViewById(R.id.app_bar)
     }
-    private val tab:MagicIndicator by lazy {
+    private val tab:LinearLayout by lazy {
         findViewById(R.id.tab_indicator)
     }
     var linearLayoutManager = LinearLayoutManager(this)

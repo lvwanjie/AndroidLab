@@ -96,7 +96,7 @@
             android:layout_width="100dp"
             android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:round="@dimen/dp_24"
+            app:round="24dp"
             tools:background="#F00"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

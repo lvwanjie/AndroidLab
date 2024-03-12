@@ -21,11 +21,14 @@ import java.util.concurrent.locks.ReentrantLock;
 class Test {
 
     public static void main(String args[]){
-        testArrayList();
+        int n  = 2;
+        int m = n >>> 1;
+        System.out.println(m);
+//        testArrayList();
     }
 
     public static void testHashmap(){
-        HashMap hashMap = new HashMap();
+        HashMap hashMap = new HashMap(1);
         hashMap.put("","");
         hashMap.remove("");
         hashMap.get("");

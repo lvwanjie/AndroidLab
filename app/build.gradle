@@ -96,8 +96,8 @@ dependencies {
     annotationProcessor "org.greenrobot:eventbus-annotation-processor:$eventbus_version"
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
 
-    implementation('com.credithc:hc-hxh-sdk:v1.0.10'){
-    }
+//    implementation('com.credithc:hc-hxh-sdk:v1.0.10'){
+//    }
 
     implementation 'com.github.tbruyelle:rxpermissions:0.12'
     implementation "com.airbnb.android:lottie:3.2.0"
