@@ -5,6 +5,7 @@ import androidx.annotation.ColorInt;
 public class PageInfo {
 
     public static String pages[] = {
+            "com.lvwanjie.myapplication.androidTest.other.testTouchEvent.TestTouchEventActivity",
             "com.lvwanjie.myapplication.androidTest.other.aidltest.TestAidlActivity",
             "com.lvwanjie.myapplication.androidTest.widget.TestService.TestServiceTaskActivity",
             "com.lvwanjie.myapplication.androidTest.jetpack.TestLiveDataActivity",

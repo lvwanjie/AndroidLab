@@ -4,12 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.lvwanjie.myapplication">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT" />
+    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:name=".MyApplication"
@@ -19,7 +24,9 @@
         android:testOnly="false"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
-
+        <activity
+            android:name=".androidTest.other.testTouchEvent.TestTouchEventActivity"
+            android:exported="false" />
         <activity
             android:name=".androidTest.jetpack.TestLiveDataActivity"
             android:exported="false" />
@@ -204,14 +211,14 @@
         <service
             android:name=".androidTest.other.aidltest.TestAidlService"
             android:exported="true"
-            android:process=":abc"
-            >
+            android:process=":abc">
             <intent-filter>
                 <action android:name="androidlab.aidl" />
             </intent-filter>
         </service>
-
-        <service android:exported="false"  android:name=".androidTest.widget.TestService.TestTaskService"/>
+        <service
+            android:name=".androidTest.widget.TestService.TestTaskService"
+            android:exported="false" />
     </application>
 
 </manifest>
