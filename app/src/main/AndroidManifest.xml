@@ -26,6 +26,7 @@
         tools:replace="android:allowBackup">
         <activity
             android:name=".androidTest.other.testTouchEvent.TestTouchEventActivity"
+            android:theme="@style/MyTransparent"
             android:exported="false" />
         <activity
             android:name=".androidTest.jetpack.TestLiveDataActivity"
