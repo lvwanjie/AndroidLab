@@ -9,10 +9,16 @@ class MyAsyncTask :AsyncTask<String,User,String>(){
        return ""
     }
 
+    fun a(){
+        this.execute()
+    }
+
 
     class User{
 
     }
+
+
 
 
 }

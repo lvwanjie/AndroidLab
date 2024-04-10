@@ -29,6 +29,14 @@ public class MyLockTest {
         }).start();
 
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myTask();
+            }
+        }).start();
+
+
     }
 
     public static void myTask(){
@@ -36,8 +44,11 @@ public class MyLockTest {
         lock.lock();
         System.out.println("start do someThing" + Thread.currentThread());
         try {
-            Thread.sleep(1000* 5);
-        } catch (InterruptedException e) {
+            long i = 0;
+            while (i<1000000000){
+                i++;
+            }
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
         System.out.println("end do someThing"+Thread.currentThread());

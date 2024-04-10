@@ -3,6 +3,7 @@ package com.lvwanjie.myapplication.androidTest.other.aidltest
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
+import android.util.ArrayMap
 import android.util.Log
 import android.view.ViewTreeObserver
 import android.widget.Toast
@@ -13,6 +14,9 @@ class TestAidlService : Service() {
     companion object{
         const val TAG = "TestAidlService.kt"
     }
+
+    val arrayMap = ArrayMap<Any,String>()
+
 
     override fun onCreate() {
         Log.i(TAG, "onCreate: ")
@@ -69,13 +73,23 @@ class TestAidlService : Service() {
 
         override fun register(listener: IListener?) {
             listener?.listen("listen1")
-            Log.i(TAG, "register:$listener")
-
+            arrayMap.put(listener,"1")
+            Log.i(TAG, "register:$listener ;hashcode${listener.hashCode()} \n" +
+                    " ${arrayMap.toString()}")
+            //打印结果
+            Log.i(TAG, "register.binder:${listener?.asBinder()}")
         }
+
 
         override fun register2(listener: IListener?) {
             listener?.listen("listen2")
-            Log.i(TAG, "register2:$listener")
+            arrayMap.put(listener,"2")
+            Log.i(TAG, "register2:$listener ;hashcode${listener.hashCode()} \n ${arrayMap.toString()}")
+
+            //打印结果 register2.binder:android.os.BinderProxy@86b7e03
+            Log.i(TAG, "register2.binder:${listener?.asBinder()}")
+
+
 
         }
 

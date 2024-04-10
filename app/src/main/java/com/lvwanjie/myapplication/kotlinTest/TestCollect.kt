@@ -1,9 +1,11 @@
 package com.lvwanjie.myapplication.kotlinTest
 
+import com.lvwanjie.myapplication.kotlinTest.testYuFa.doSomething
+
 class TestCollect {
 
     operator fun plus( s:String){
-
+        doSomething()
     }
 
 

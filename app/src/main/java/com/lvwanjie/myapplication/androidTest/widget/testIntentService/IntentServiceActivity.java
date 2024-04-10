@@ -18,6 +18,7 @@ public class IntentServiceActivity extends AppCompatActivity {
 
     public void btClick(View View){
         MyIntentService.startActionBaz(this,"p1","p2");
+        startActivity(new Intent());
     }
 
 

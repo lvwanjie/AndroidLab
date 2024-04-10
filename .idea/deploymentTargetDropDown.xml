@@ -8,6 +8,18 @@
       <entry key="kotlintest">
         <State />
       </entry>
+      <entry key="mylibrary">
+        <State />
+      </entry>
+      <entry key="testeventbus2">
+        <State />
+      </entry>
+      <entry key="testeventbus3">
+        <State />
+      </entry>
+      <entry key="testoptimize">
+        <State />
+      </entry>
     </value>
   </component>
 </project>

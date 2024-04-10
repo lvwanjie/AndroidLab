@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.RemoteViews;
 
 import com.lvwanjie.myapplication.R;
+import com.lvwanjie.myapplication.androidTest.component.Test;
 
 public class HpActivity extends AppCompatActivity {
 
@@ -28,6 +29,7 @@ public class HpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Test.t1();
 
 
     }

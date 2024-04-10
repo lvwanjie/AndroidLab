@@ -7,10 +7,13 @@ import androidx.lifecycle.ViewModel;
 class MyViewModel extends ViewModel {
 
 
+
+
     public MutableLiveData<String> mLiveData = new MutableLiveData();
     @Override
     protected void onCleared() {
         super.onCleared();
+
     }
 
     public void getData(){

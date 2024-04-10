@@ -5,6 +5,13 @@ import androidx.annotation.ColorInt;
 public class PageInfo {
 
     public static String pages[] = {
+            "com.lvwanjie.myapplication.androidTest.widget.testbitmap.TestBitmapActivity",
+            "com.lvwanjie.myapplication.androidTest.testAnim.TestAnimActivity",
+            "com.lvwanjie.myapplication.androidTest.widget.testAsyncTask.TestAsyncTaskActivity",
+            "com.lvwanjie.myapplication.javaTest.testThread.myLock.TestLockActivity",
+            "com.lvwanjie.myapplication.androidTest.widget.testRecyclerView.TestRcMaiDianActivity",
+            "com.lvwanjie.myapplication.androidTest.testPlugin.TestClassLoaderActivity",
+            "com.lvwanjie.myapplication.kotlinTest.testCoroutines.TestCoroutines2Activity",
             "com.lvwanjie.myapplication.androidTest.widget.testFlexBox.TestFlexboxActivity",
             "com.lvwanjie.myapplication.androidTest.other.testmeasure.TestView2Activity",
             "com.lvwanjie.myapplication.androidTest.other.testLife.TestLife1Activity",

@@ -16,6 +16,10 @@ dependencyResolutionManagement {
             allowInsecureProtocol = true
             url 'https://maven.aliyun.com/repository/public'
         }
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://10.100.19.220:8081/nexus/content/repositories/releases/'
+//        }
 
         maven {
             allowInsecureProtocol = true
@@ -33,4 +37,10 @@ dependencyResolutionManagement {
 rootProject.name = "My Application"
 include ':app'
 include ':kotlintest'
+include ':myCompiler'
+include ':myAnnotation'
+include ':mylibrary'
+include ':testeventbus2'
+include ':testeventbus3'
+include ':testoptimize'
 include ':hilttest'

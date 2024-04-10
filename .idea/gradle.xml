@@ -12,6 +12,12 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/hilttest" />
             <option value="$PROJECT_DIR$/kotlintest" />
+            <option value="$PROJECT_DIR$/myAnnotation" />
+            <option value="$PROJECT_DIR$/myCompiler" />
+            <option value="$PROJECT_DIR$/mylibrary" />
+            <option value="$PROJECT_DIR$/testeventbus2" />
+            <option value="$PROJECT_DIR$/testeventbus3" />
+            <option value="$PROJECT_DIR$/testoptimize" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

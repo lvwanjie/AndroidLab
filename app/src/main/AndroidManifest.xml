@@ -35,6 +35,58 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".androidTest.widget.testbitmap.TestBitmapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.testAnim.TestAnimActivity"
+            android:exported="false" />
+        <activity
+            android:name=".javaTest.testThread.myLock.TestLockActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.appStartUp.TestStartTimeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".androidTest.widget.testRecyclerView.TestRcMaiDianActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.testPlugin.TestAssetsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.testPlugin.TestClassLoaderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".kotlinTest.testCoroutines.TestCoroutines2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.testApt.TestAptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.jetpack.testDataBind.TestDataBindActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.other.testLife.TestLife1Activity"
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".androidTest.other.launchMode.TestLaunchMode3Activity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.lwj.tLaunchMode_3" />
+        <activity
+            android:name=".androidTest.other.launchMode.TestLaunchMode2Activity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.lwj.tLaunchMode_2" />
+        <activity
+            android:name=".androidTest.other.launchMode.TestLaunchModeActivity"
+            android:exported="false"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".androidTest.other.testTouchEvent.TestTouchEventActivity"
+            android:exported="false"
+            android:theme="@style/MyTransparent" />
+        <activity
             android:name=".androidTest.widget.testFlexBox.TestFlexboxActivity"
             android:exported="false" />
         <activity

@@ -26,6 +26,20 @@ public class TestHandler {
         handler.sendMessage(Message.obtain());
         Looper.loop();
         Looper.myLooper().quit();
+        Looper.myLooper().quitSafely();
         HandlerThread handlerThread;
+        handler.removeCallbacksAndMessages(null);
+        handler.removeMessages(0);
+    }
+
+    public static void testIdle(){
+        Looper.myQueue().addIdleHandler(new MessageQueue.IdleHandler() {
+            @Override
+            public boolean queueIdle() {
+                //空闲时处理逻辑
+
+                return false;
+            }
+        });
     }
 }

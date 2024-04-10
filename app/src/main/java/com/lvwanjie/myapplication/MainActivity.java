@@ -9,12 +9,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.app.Application;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -27,6 +29,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity {
+
+    static {
+        Log.i(MyApplication.QD_TAG, "main_activity_static initializer: ");
+    }
 
     private RecyclerView recyclerView;
 
@@ -45,6 +51,7 @@ public class MainActivity extends FragmentActivity {
 
     public<T> void  a(Class<T> t){
         Intent intent = new Intent(this,t);
+
     }
 
 
@@ -114,5 +121,15 @@ public class MainActivity extends FragmentActivity {
            });
        }
    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 

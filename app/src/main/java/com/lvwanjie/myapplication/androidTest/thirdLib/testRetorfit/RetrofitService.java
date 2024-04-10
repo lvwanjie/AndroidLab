@@ -8,4 +8,6 @@ interface RetrofitService {
 
     @GET("query")
     Call<PostInfo> getPostInfo(@Query("type") String type,@Query("postid") String postid);
+
+    PostInfo getInfo(@Query("type") String type,@Query("postid") String postid);
 }

@@ -43,6 +43,7 @@ public class TestRetrofitActivity extends AppCompatActivity {
                 Log.i(TAG, "onFailure: ");
             }
         });
+        PostInfo postInfo  = retrofitService.getInfo("yuantong","111111");
     }
 
 

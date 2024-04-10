@@ -35,9 +35,9 @@ public class MyCustomView extends LinearLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         Log.i(TestTouchEventActivity.TAG, "onInterceptTouchEvent: " + getActionStr(ev.getAction()));
-//        if(ev.getAction() == MotionEvent.ACTION_MOVE){
-//            return true;
-//        }
+        if(ev.getAction() == MotionEvent.ACTION_MOVE){
+            return true;
+        }
         return super.onInterceptTouchEvent(ev);
     }
 

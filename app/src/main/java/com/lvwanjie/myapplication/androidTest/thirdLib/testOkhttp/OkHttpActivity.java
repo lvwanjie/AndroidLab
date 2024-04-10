@@ -25,16 +25,17 @@ public class OkHttpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ok_http);
     }
 
-    public void test(){
+    public void test() throws IOException {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new MyRetryInterceptor()).authenticator(new Authenticator() {
             @Override
             public Request authenticate(Route route, Response response) throws IOException {
                 return null;
             }
-        }).build();
+        }).retryOnConnectionFailure(false).build();
         Request request = new Request.Builder().get().url("").build();
         client.interceptors();
         Call call = client.newCall(request);
+        call.execute();
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

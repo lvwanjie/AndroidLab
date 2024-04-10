@@ -1,5 +1,6 @@
 package com.lvwanjie.myapplication.javaTest.testThread;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
@@ -36,6 +37,22 @@ public class TestFutureTask {
                 return "this is call";
             }
         });
+
+        Runnable r = new Runnable() {
+            @Override
+            public void run() throws RuntimeException {
+
+            }
+        };
+
+        Callable c = new Callable() {
+            @Override
+            public Object call()  throws IOException {
+                return null;
+            }
+        };
+
+
         service.execute(futureTask1);
         try {
             Thread.sleep(10000);

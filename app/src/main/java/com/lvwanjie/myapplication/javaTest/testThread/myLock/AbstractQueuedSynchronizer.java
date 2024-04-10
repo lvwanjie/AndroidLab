@@ -915,16 +915,16 @@ public abstract class AbstractQueuedSynchronizer
                 final Node p = node.predecessor();
                 System.out.println("acquireQueued i= "+i +"t="+Thread.currentThread());
                 if (p == head && tryAcquire(arg)) {
-                    System.out.println("acquireQueued  end tryAcquire i= "+i +"t="+Thread.currentThread());
+                    System.out.println("acquireQueued  head");
                     setHead(node);
                     p.next = null; // help GC
                     return interrupted;
                 }
                 if (shouldParkAfterFailedAcquire(p, node)){
-                    System.out.println("acquireQueued  parkAndCheckInterrupt i= "+i +"t="+Thread.currentThread());
+                    System.out.println("acquireQueued  parkAndCheckInterrupt t="+Thread.currentThread());
                     interrupted |= parkAndCheckInterrupt();
                 }
-                System.out.println("acquireQueued  end for i= "+i +"t="+Thread.currentThread());
+                System.out.println("acquireQueued  end for t="+Thread.currentThread());
 
             }
         } catch (Throwable t) {
@@ -975,6 +975,7 @@ public abstract class AbstractQueuedSynchronizer
         final Node node = addWaiter(Node.EXCLUSIVE);
         try {
             for (;;) {
+                System.out.println("doAcquireNanos for");
                 final Node p = node.predecessor();
                 if (p == head && tryAcquire(arg)) {
                     setHead(node);
