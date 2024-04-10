@@ -2,6 +2,8 @@
 package com.lvwanjie.myapplication.androidTest.other.aidltest;
 
 // Declare any non-default types here with import statements
+import  com.lvwanjie.myapplication.androidTest.other.aidltest.IListener;
+
 
 interface MyManagerService {
     /**
@@ -12,4 +14,8 @@ interface MyManagerService {
             double aDouble, String aString);
 
     List<String> getBookList();
+
+    void register(IListener listener);
+
+    void register2(IListener listener);
 }

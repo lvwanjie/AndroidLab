@@ -4,6 +4,9 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
+import android.view.ViewTreeObserver
+import android.widget.Toast
+import kotlin.math.log
 
 class TestAidlService : Service() {
     
@@ -13,11 +16,13 @@ class TestAidlService : Service() {
 
     override fun onCreate() {
         Log.i(TAG, "onCreate: ")
+        Toast.makeText(applicationContext,"onCreate",Toast.LENGTH_LONG).show()
         super.onCreate()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         Log.i(TAG, "onStartCommand: ")
+        Toast.makeText(applicationContext, "service_start$packageName",Toast.LENGTH_LONG).show()
         return super.onStartCommand(intent, flags, startId)
     }
 
@@ -61,5 +66,19 @@ class TestAidlService : Service() {
             mutableList.add("b")
             return mutableList
         }
+
+        override fun register(listener: IListener?) {
+            listener?.listen("listen1")
+            Log.i(TAG, "register:$listener")
+
+        }
+
+        override fun register2(listener: IListener?) {
+            listener?.listen("listen2")
+            Log.i(TAG, "register2:$listener")
+
+        }
+
+
     }
 }

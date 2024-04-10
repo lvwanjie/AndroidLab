@@ -4,6 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.lvwanjie.myapplication">
 
+    <queries>
+        <package android:name="com.lvwanjie.myapplication" />
+
+        <intent>
+            <action android:name="com.androidlab.aidl" />
+        </intent>
+    </queries>
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -13,7 +21,8 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.CAPTURE_VIDEO_OUTPUT"
+    <uses-permission
+        android:name="android.permission.CAPTURE_VIDEO_OUTPUT"
         tools:ignore="ProtectedPermissions" />
 
     <application
@@ -22,12 +31,40 @@
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:testOnly="false"
+        android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
-            android:name=".androidTest.other.testTouchEvent.TestTouchEventActivity"
-            android:theme="@style/MyTransparent"
+            android:name=".androidTest.other.testSurfaceView.TestSurfaceActivity"
             android:exported="false" />
+        <activity
+            android:name=".androidTest.other.testmeasure.TestView2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.other.testLife.TestLife2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.other.testLife.TestLife1Activity"
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".androidTest.other.launchMode.TestLaunchMode3Activity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.lwj.tLaunchMode_3" />
+        <activity
+            android:name=".androidTest.other.launchMode.TestLaunchMode2Activity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.lwj.tLaunchMode_2" />
+        <activity
+            android:name=".androidTest.other.launchMode.TestLaunchModeActivity"
+            android:exported="false"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".androidTest.other.testTouchEvent.TestTouchEventActivity"
+            android:exported="false"
+            android:theme="@style/MyTransparent" />
         <activity
             android:name=".androidTest.jetpack.TestLiveDataActivity"
             android:exported="false" />
@@ -179,7 +216,7 @@
             android:name=".androidTest.other.aidltest.TestAidlActivity"
             android:exported="false" />
         <activity
-            android:name=".androidTest.component.TestFragmentActivity"
+            android:name=".androidTest.component.testFragment.TestFragmentActivity"
             android:exported="false" />
         <activity
             android:name=".androidTest.widget.testListView.TestListViewActivity"
@@ -214,7 +251,7 @@
             android:exported="true"
             android:process=":abc">
             <intent-filter>
-                <action android:name="androidlab.aidl" />
+                <action android:name="com.androidlab.aidl" />
             </intent-filter>
         </service>
         <service

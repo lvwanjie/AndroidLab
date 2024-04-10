@@ -4,24 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".androidTest.widget.testSp.TestSpActivity">
+    tools:context=".TestBApp2Activity">
 
-    <Button
-        android:onClick="btClickPrivate"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="mode_private"/>
-
-
-    <Button
-        android:onClick="btClickAppend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"
-        android:text="mode_Append"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="test_B_2"></TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

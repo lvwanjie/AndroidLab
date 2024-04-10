@@ -3,6 +3,7 @@ package com.lvwanjie.myapplication.javaTest.testThread;
 import java.util.Scanner;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -56,6 +57,19 @@ class TestExecutor {
         ScheduledThreadPoolExecutor executor = (ScheduledThreadPoolExecutor) Executors.newScheduledThreadPool(1);
 //        executor.schedule()
 //        executor.execute();
+        ScheduledFuture s = executor.schedule(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        },100,TimeUnit.MILLISECONDS);
+        s.cancel(true);
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
         Lock lock = new ReentrantLock();
         lock.lock();
     }

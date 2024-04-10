@@ -1,6 +1,7 @@
-package com.lvwanjie.myapplication.androidTest.component
+package com.lvwanjie.myapplication.androidTest.component.testFragment
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,7 +13,7 @@ import com.lvwanjie.myapplication.R
 class MyFragment :Fragment(){
 
     companion object{
-        fun newInstance(type:String):MyFragment{
+        fun newInstance(type:String): MyFragment {
             val bundle = Bundle()
             bundle.putString("type",type)
             val listFragment = MyFragment()
@@ -35,6 +36,7 @@ class MyFragment :Fragment(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arguments
         Log.i(TAG, "$type  onCreate: ")
     }
 
@@ -86,5 +88,13 @@ class MyFragment :Fragment(){
     override fun onDestroy() {
         Log.i(TAG, "$type onDestroy: ")
         super.onDestroy()
+    }
+
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
     }
 }

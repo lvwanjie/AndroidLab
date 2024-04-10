@@ -92,10 +92,13 @@ class Test {
             protected int sizeOf(Object key, Object value) {
                 return super.sizeOf(key, value);
             }
+
+
         };
         lruCache.put("","");
 
         lruCache.get("");
+        lruCache.remove("");
 
         ReadWriteLock readWriteLock;
         CopyOnWriteArrayList copyOnWriteArrayList =new CopyOnWriteArrayList();

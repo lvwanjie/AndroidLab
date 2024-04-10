@@ -5,6 +5,9 @@ import androidx.annotation.ColorInt;
 public class PageInfo {
 
     public static String pages[] = {
+            "com.lvwanjie.myapplication.androidTest.other.testmeasure.TestView2Activity",
+            "com.lvwanjie.myapplication.androidTest.other.testLife.TestLife1Activity",
+            "com.lvwanjie.myapplication.androidTest.other.launchMode.TestLaunchModeActivity",
             "com.lvwanjie.myapplication.androidTest.other.testTouchEvent.TestTouchEventActivity",
             "com.lvwanjie.myapplication.androidTest.other.aidltest.TestAidlActivity",
             "com.lvwanjie.myapplication.androidTest.widget.TestService.TestServiceTaskActivity",
@@ -41,7 +44,7 @@ public class PageInfo {
             "com.lvwanjie.myapplication.androidTest.widget.testIntentService.IntentServiceActivity",
             "com.lvwanjie.myapplication.androidTest.other.huapeng.HpActivity",
             "com.lvwanjie.myapplication.androidTest.thirdLib.testGlide.TestGlideActivity",
-            "com.lvwanjie.myapplication.androidTest.component.TestFragmentActivity",
+            "com.lvwanjie.myapplication.androidTest.component.testFragment.TestFragmentActivity",
             "com.lvwanjie.myapplication.androidTest.widget.testListView.TestListViewActivity",
             "com.lvwanjie.myapplication.androidTest.widget.testRecyclerView.TestRecyclerViewActivity"
     };

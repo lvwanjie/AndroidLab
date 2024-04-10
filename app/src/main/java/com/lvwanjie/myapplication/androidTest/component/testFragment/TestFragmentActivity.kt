@@ -1,4 +1,4 @@
-package com.lvwanjie.myapplication.androidTest.component
+package com.lvwanjie.myapplication.androidTest.component.testFragment
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

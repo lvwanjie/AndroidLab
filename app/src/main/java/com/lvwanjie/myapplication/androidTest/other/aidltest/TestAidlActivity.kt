@@ -11,12 +11,14 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.lvwanjie.myapplication.R
 import com.lvwanjie.myapplication.androidTest.other.aidltest.MyManagerService.Stub.TRANSACTION_getBookList
+import java.util.Arrays
 
 class TestAidlActivity : AppCompatActivity() {
 
     companion object{
         public const val TAG = "TestAidlActivity.kt"
     }
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_aidl)
@@ -36,7 +38,16 @@ class TestAidlActivity : AppCompatActivity() {
         object:ServiceConnection{
             override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
                 var list = MyManagerService.Stub.asInterface(service).bookList
-                Log.i(TAG, "onServiceConnected: $service")
+                var str = listOf(list)
+                Log.i(TAG, "onServiceConnected: $str")
+                var listener = object :IListener.Stub(){
+                    override fun listen(str: String?) {
+                        Log.i(TAG, "listen1: $str")
+                    }
+
+                }
+                MyManagerService.Stub.asInterface(service).register(listener)
+                MyManagerService.Stub.asInterface(service).register2(listener)
             }
 
             override fun onServiceDisconnected(name: ComponentName?) {
@@ -45,10 +56,12 @@ class TestAidlActivity : AppCompatActivity() {
         }
     }
 
+
+
     @RequiresApi(Build.VERSION_CODES.O)
     private fun startService(){
         var intent = Intent(this,TestAidlService::class.java)
-        startForegroundService(intent)
+        startService(intent)
         bindService(intent,conn, BIND_AUTO_CREATE)
     }
 
@@ -57,3 +70,11 @@ class TestAidlActivity : AppCompatActivity() {
         super.onDestroy()
     }
 }
+
+class MyListener:IListener.Stub(){
+    override fun listen(str: String?) {
+        Log.i(TestAidlActivity.TAG, "listen: $str")
+    }
+}
+
+
