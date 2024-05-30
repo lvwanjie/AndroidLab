@@ -76,7 +76,7 @@ class TestAidlService : Service() {
             arrayMap.put(listener,"1")
             Log.i(TAG, "register:$listener ;hashcode${listener.hashCode()} \n" +
                     " ${arrayMap.toString()}")
-            //打印结果
+            //打印结果 register.binder:android.os.BinderProxy@86b7e03
             Log.i(TAG, "register.binder:${listener?.asBinder()}")
         }
 
