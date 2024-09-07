@@ -11,7 +11,7 @@ import java.util.*
 class TestAndroidPathActivity : AppCompatActivity() {
 
     companion object{
-        const val TAG = "TestAndroidPathActivity";
+        const val TAG = "TestAndroidPathActivity.kt";
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
