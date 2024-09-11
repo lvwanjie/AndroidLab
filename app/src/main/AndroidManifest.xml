@@ -35,6 +35,9 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".androidTest.widget.testFlexBox.TestFlexboxActivity"
+            android:exported="false" />
+        <activity
             android:name=".androidTest.other.testSurfaceView.TestSurfaceActivity"
             android:exported="false" />
         <activity

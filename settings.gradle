@@ -4,13 +4,22 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+//        maven {
+//            allowInsecureProtocol = true
+//            url '/Users/lvwanjie/Documents/work/project/HxhSdk/repo/'
+//        }
+//        maven {
+//            allowInsecureProtocol = true
+//            url 'http://10.100.19.220:8081/nexus/content/repositories/releases/'
+//        }
         maven {
             allowInsecureProtocol = true
-            url '/Users/lvwanjie/Documents/work/project/HxhSdk/repo/'
+            url 'https://maven.aliyun.com/repository/public'
         }
+
         maven {
             allowInsecureProtocol = true
-            url 'http://10.100.19.220:8081/nexus/content/repositories/releases/'
+            url 'https://maven.aliyun.com/repository/google'
         }
         maven {
             allowInsecureProtocol = true
@@ -24,3 +33,4 @@ dependencyResolutionManagement {
 rootProject.name = "My Application"
 include ':app'
 include ':kotlintest'
+include ':hilttest'
