@@ -19,6 +19,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <com.lvwanjie.myapplication.androidTest.widget.testFlexBox.CustomExpandFlowLayout
+        android:id="@+id/my_expand_flow_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="10dp"
+        android:layout_marginTop="200dp"
+        android:background="#bebebe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +35,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="btClick"
+        />
+
+    <Button
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="expand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="expand"
         />
 
 

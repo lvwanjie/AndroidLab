@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--视频封面-->
+    <item name="common_video_cover_img" type="id" />
+    <item name="common_video_cover_img_default" type="id" />
+    <item name="common_video_title" type="id" />
+    <item name="common_video_duration" type="id" />
+    <item name="common_video_payment" type="id" />
+    <item name="common_video_likes" type="id" />
+    <item name="flow_item_bound" type="id"/>
+</resources>
