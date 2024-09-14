@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <com.lvwanjie.myapplication.androidTest.widget.testFlexBox.CustomExpandFlowLayout
+    <com.lvwanjie.myapplication.androidTest.widget.testFlexBox.ExpandFlowLayout
         android:id="@+id/my_expand_flow_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

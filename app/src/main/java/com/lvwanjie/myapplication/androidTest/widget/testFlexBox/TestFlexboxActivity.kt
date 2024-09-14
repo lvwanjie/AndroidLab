@@ -18,7 +18,7 @@ class TestFlexboxActivity : AppCompatActivity() {
     private val flexBox :FlexboxLayout by lazy {
         findViewById(R.id.flex_box)
     }
-    private val customExpandFlowLayout:CustomExpandFlowLayout by lazy {
+    private val customExpandFlowLayout:ExpandFlowLayout by lazy {
         findViewById(R.id.my_expand_flow_layout)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,9 +48,9 @@ class TestFlexboxActivity : AppCompatActivity() {
     fun expand(view:View){
         flag = !flag
         if(flag){
-            customExpandFlowLayout.setExpand()
+            customExpandFlowLayout.setExpand(true)
         }else{
-            customExpandFlowLayout.setClose()
+            customExpandFlowLayout.setExpand(false)
         }
     }
 
