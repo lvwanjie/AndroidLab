@@ -8,7 +8,7 @@ import android.widget.LinearLayout
 import com.lvwanjie.myapplication.R
 import kotlin.math.max
 
-class CustomExpandFlowLayout@JvmOverloads constructor(
+class ExpandFlowLayout@JvmOverloads constructor(
     context: Context,
     attributes: AttributeSet?= null,
     def:Int = 0
@@ -36,29 +36,28 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
         removeView(lastView)
         this.addView(view)
         this.lastView = view
-        view.setOnClickListener {
-            isClose = !isClose
-            requestLayout()
-            invalidate()
-        }
     }
 
-    fun setExpand(){
-        isClose = false
-        expandViewShow = false
+    fun setExpand(expand:Boolean){
+        isClose = !expand
         requestLayout()
         invalidate()
     }
 
-    fun setClose(){
-        isClose = true
-        expandViewShow = true
+    fun isExpand():Boolean{
+        return !isClose
+    }
+
+    fun toggle(){
+        isClose = !isClose
         requestLayout()
         invalidate()
     }
 
-    fun setexpandableLine(expandableLine:Int){
-        this.expandableLine = expandableLine
+    fun setExpandViewShow(show:Boolean){
+        expandViewShow = show
+        requestLayout()
+        invalidate()
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -164,7 +163,6 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
     }
 
 
-
     override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
         for(i in 0 until childCount) {
             val curView = getChildAt(i)
@@ -174,11 +172,8 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
             }else {
                 curView.layout(0,0,0,0)
             }
-
         }
-
     }
-
 
 
 }
