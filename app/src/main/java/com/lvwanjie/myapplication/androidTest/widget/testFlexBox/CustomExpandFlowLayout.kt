@@ -18,11 +18,20 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
         const val TAG = "CustomExpandFlow.kt"
     }
     private var lastView:View? = null
-    private var maxLine = -1;
-    private var lineSpace  = 20
-    private var heightSpace = 30
+    private var expandableLine = -1;
+    private var tabSpace  = 0
+    private var lineSpace = 0
     private var isClose = true
     private var expandViewShow = true
+
+    init {
+        val typedArray = context.obtainStyledAttributes(attributes, R.styleable.expand_flow_layout);
+        tabSpace = typedArray.getDimension(R.styleable.expand_flow_layout_tab_space,0f).toInt();
+        lineSpace = typedArray.getDimension(R.styleable.expand_flow_layout_line_space,0f).toInt()
+        expandableLine = typedArray.getInteger(R.styleable.expand_flow_layout_expand_line,-1).toInt()
+        typedArray.recycle()
+    }
+
     fun setLastView(view: View){
         removeView(lastView)
         this.addView(view)
@@ -48,8 +57,8 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
         invalidate()
     }
 
-    fun setMaxLine(maxLine:Int){
-        this.maxLine = maxLine
+    fun setexpandableLine(expandableLine:Int){
+        this.expandableLine = expandableLine
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -80,7 +89,7 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
                 //重制left 和 top 位置
                 curLeft = leftStart
                 lastLineTop = curTop
-                curTop += (curLineHeight + heightSpace)
+                curTop += (curLineHeight + lineSpace)
                 lineCount++
             }
             if(needSetLastViewWithCloseState(lineCount)){
@@ -91,14 +100,14 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
             val childBottom = curTop + curView.measuredHeight
             val rect = Rect(curLeft, curTop, childRight, childBottom)
             curView.setTag(R.id.flow_item_bound,rect)
-            curLeft = childRight + lineSpace
+            curLeft = childRight + tabSpace
         }
 
         if(lastView != null && expandViewShow){
             // 如果关闭状态 重绘最后一行
             measureChild(lastView,widthMeasureSpec,heightMeasureSpec)
             if(needSetLastViewWithCloseState(lineCount)){
-                curLeft = reMeasureLine(lastLineStartIndex, lastLineEndIndex,rightEnd) + lineSpace
+                curLeft = reMeasureLine(lastLineStartIndex, lastLineEndIndex,rightEnd) + tabSpace
                 curTop = lastLineTop
             }
 
@@ -109,7 +118,7 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
                 val lastViewSpaceWidth = lastViewWidth
                 if((rightEnd - curLeft) < lastViewSpaceWidth ){
                     curLeft = leftStart
-                    curTop += (curLineHeight + heightSpace)
+                    curTop += (curLineHeight + lineSpace)
                 }
                 val rect = Rect(curLeft, curTop, curLeft+lastViewWidth, curTop+lastViewHeight)
                 lastView?.setTag(R.id.flow_item_bound,rect)
@@ -127,7 +136,7 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
 
 
     private fun reMeasureLine(lineStartIndex:Int,lineEndIndex:Int,rightEnd:Int):Int{
-        val lastViewSpaceWidth = (lastView?.measuredWidth?:0) + lineSpace
+        val lastViewSpaceWidth = (lastView?.measuredWidth?:0) + tabSpace
         var lastShowRect:Rect? = null
         for(i in lineEndIndex downTo lineStartIndex){
             val curView = getChildAt(i)
@@ -143,15 +152,15 @@ class CustomExpandFlowLayout@JvmOverloads constructor(
 
 
     private fun needSetLastViewWithCloseState(lineCount:Int):Boolean{
-        return (maxLine > 0) and (lineCount > maxLine) and (isClose)
+        return (expandableLine > 0) and (lineCount > expandableLine) and (isClose)
     }
 
     private fun needSetLastView(lineCount:Int):Boolean{
-        return (maxLine > 0) and (lineCount > maxLine)
+        return (expandableLine > 0) and (lineCount > expandableLine)
     }
 
     private fun needSetLastViewWithOpenState(lineCount:Int):Boolean{
-        return (maxLine > 0) and (lineCount > maxLine) and (!isClose)
+        return (expandableLine > 0) and (lineCount > expandableLine) and (!isClose)
     }
 
 

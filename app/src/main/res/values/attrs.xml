@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="expand_flow_layout">
+        <attr name="tab_space" format="dimension"/>
+        <attr name="line_space" format="dimension"/>
+        <attr name="expand_line" format="integer"/>
+    </declare-styleable>
+</resources>

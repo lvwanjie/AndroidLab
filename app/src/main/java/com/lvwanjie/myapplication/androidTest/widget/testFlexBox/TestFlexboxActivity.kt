@@ -41,7 +41,7 @@ class TestFlexboxActivity : AppCompatActivity() {
         }
         val lastView = LayoutInflater.from(this).inflate(R.layout.item_flex_last,flexBox,false)
         customExpandFlowLayout.setLastView(lastView)
-        customExpandFlowLayout.setMaxLine(2)
+//        customExpandFlowLayout.setexpandableLine(2)
     }
 
     private var flag = false
