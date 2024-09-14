@@ -19,6 +19,7 @@ class ExpandFlowLayout@JvmOverloads constructor(
     }
     private var lastView:View? = null
     private var expandableLine = -1;
+    private var maxLine = -1;
     private var tabSpace  = 0
     private var lineSpace = 0
     private var isClose = true
@@ -91,9 +92,10 @@ class ExpandFlowLayout@JvmOverloads constructor(
                 curTop += (curLineHeight + lineSpace)
                 lineCount++
             }
-            if(needSetLastViewWithCloseState(lineCount)){
+            if(isOverLine(lineCount)){
                 break
             }
+
             curLineHeight = max(curLineHeight,curView.measuredHeight)
             val childRight = curLeft + curView.measuredWidth
             val childBottom = curTop + curView.measuredHeight
@@ -149,7 +151,19 @@ class ExpandFlowLayout@JvmOverloads constructor(
         return lastShowRect?.right?:0
     }
 
+    //绘制的总数量是否超过指定行数
+    private fun isOverLine(lineCount: Int) :Boolean{
+        var isOver = false
+        if(isClose){
+            isOver = (expandableLine > 0) and (lineCount > expandableLine)
+        }else{
+            isOver = (maxLine > 0) and (lineCount > maxLine)
+        }
+        return  isOver
+    }
 
+
+    //总行数超过expand 并且是关闭状态
     private fun needSetLastViewWithCloseState(lineCount:Int):Boolean{
         return (expandableLine > 0) and (lineCount > expandableLine) and (isClose)
     }
