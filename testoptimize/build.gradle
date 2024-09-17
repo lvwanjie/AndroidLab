@@ -7,12 +7,13 @@ plugins {
 
 android {
     namespace 'com.hengchang.testoptimize'
-    compileSdk 34
+    compileSdk 33
+    resourcePrefix "opt"
 
     defaultConfig {
         applicationId "com.hengchang.testoptimize"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -23,11 +24,11 @@ android {
             abiFilters 'armeabi' , 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
         }
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [moduleName :project.getName() ]
-            }
-        }
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [moduleName :project.getName() ]
+//            }
+//        }
 
     }
 
@@ -48,26 +49,28 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+//    testImplementation 'junit:junit:4.13.2'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     //bugly
     implementation 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如4.0.3
     //X5 webview
     api 'com.tencent.tbs:tbssdk:44286'
     //aRouter
-    api 'com.alibaba:arouter-api:1.5.1'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
+//    api 'com.alibaba:arouter-api:1.5.1'
+//    annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
     //leakcanary
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
     //logger 日志
     implementation 'com.orhanobut:logger:2.2.0'
     //神策
     implementation 'com.sensorsdata.analytics.android:SensorsAnalyticsSDK:6.8.0'
+    implementation 'com.github.markzhai:blockcanary-android:1.5.0'
+
 
 
 }

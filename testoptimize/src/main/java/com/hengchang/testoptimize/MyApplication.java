@@ -1,9 +1,13 @@
 package com.hengchang.testoptimize;
 
+import android.app.ActivityManager;
 import android.app.Application;
+import android.os.Debug;
 import android.util.Log;
 
-import com.alibaba.android.arouter.launcher.ARouter;
+//import com.alibaba.android.arouter.launcher.ARouter;
+import com.github.moduth.blockcanary.BlockCanary;
+import com.hengchang.testoptimize.testBlockCanary.AppBlockCanaryContext;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 import com.sensorsdata.analytics.android.sdk.SAConfigOptions;
@@ -28,10 +32,18 @@ public class MyApplication extends Application {
         CrashReport.initCrashReport(getApplicationContext(), "7987d69040", true);
 
         initQBWebView();
-        ARouter.init(this);
-        AppWatcher.INSTANCE.manualInstall(this);
+//        ARouter.init(this);
+//        AppWatcher.INSTANCE.manualInstall(this);
         Logger.addLogAdapter(new AndroidLogAdapter());
         initSensor();
+        BlockCanary.install(this, new AppBlockCanaryContext()).start();
+
+//        try {
+//            ActivityManager activityManager = null;
+//            activityManager.getProcessesInErrorState();
+//        }catch (Exception e){
+//
+//        }
 
 
     }

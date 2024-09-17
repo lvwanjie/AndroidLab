@@ -7,17 +7,13 @@ class TestCoroutines {
 
 
     public fun t1(){
-        GlobalScope.launch {
-            a()
+        GlobalScope.launch(Dispatchers.Main) {
+           var v =  withContext(Dispatchers.IO){
+                Thread.sleep(2000)
+               "异步获取"
+            }
+            println(v)
         }
-
-        runBlocking {
-
-        }
-
-//        var coroutineScope = CoroutineScope()
-
-
 
     }
 
@@ -41,4 +37,8 @@ class TestCoroutines {
     }
 
 
+}
+
+fun main(){
+    TestCoroutines().t1()
 }

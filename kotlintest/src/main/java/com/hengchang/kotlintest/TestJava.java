@@ -16,8 +16,15 @@ public class TestJava {
      * @param args
      */
 
+
+    static String str ;
+
     public static void main(String[] args){
-        testIterable();
+//        testIterable();
+        if(str != null){
+            str.trim();
+        }
+        System.out.println(str+"");
     }
 
     public static void testWy(){

@@ -5,6 +5,7 @@
       <module name="My_Application.app" target="17" />
       <module name="My_Application.kotlintest" target="17" />
       <module name="My_Application.mylibrary" target="17" />
+      <module name="My_Application.othermodule" target="17" />
       <module name="My_Application.testeventbus2" target="17" />
       <module name="My_Application.testeventbus3" target="17" />
       <module name="My_Application.testoptimize" target="17" />

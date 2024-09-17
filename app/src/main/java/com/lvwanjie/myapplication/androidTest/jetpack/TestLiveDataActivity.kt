@@ -22,6 +22,7 @@ class TestLiveDataActivity : AppCompatActivity() {
         liveData.observe(this){
              textView.text = it
         }
+
     }
 
     fun postValue(view: View){

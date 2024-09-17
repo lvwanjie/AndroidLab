@@ -32,11 +32,15 @@ public class MyCustomView extends LinearLayout {
         return super.dispatchTouchEvent(ev);
     }
 
+    boolean isFirstIntercept = false;
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         Log.i(TestTouchEventActivity.TAG, "onInterceptTouchEvent: " + getActionStr(ev.getAction()));
         if(ev.getAction() == MotionEvent.ACTION_MOVE){
-            return true;
+//            if(!isFirstIntercept){
+//                isFirstIntercept = true;
+//                return true;
+//            }
         }
         return super.onInterceptTouchEvent(ev);
     }
@@ -44,7 +48,7 @@ public class MyCustomView extends LinearLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.i(TestTouchEventActivity.TAG, "onTouchEvent: "+getActionStr(event.getAction()));
-        return super.onTouchEvent(event);
+        return true;
     }
 
 

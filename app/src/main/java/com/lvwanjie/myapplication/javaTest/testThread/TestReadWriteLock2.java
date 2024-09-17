@@ -6,6 +6,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * ReetrantReadWriteLock实现
+ *  读写锁：可以理解为 同一把锁 分两种状态
+ *  多线程 情况 读锁都可以进，写锁只能是等上一个释放
  *
  * @author itbird
  */

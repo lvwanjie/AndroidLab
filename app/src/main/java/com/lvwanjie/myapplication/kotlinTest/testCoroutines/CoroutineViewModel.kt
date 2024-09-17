@@ -2,6 +2,7 @@ package com.lvwanjie.myapplication.kotlinTest.testCoroutines
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 class CoroutineViewModel : ViewModel(){
@@ -12,5 +13,7 @@ class CoroutineViewModel : ViewModel(){
             if (3.also { a = it } > 0) {
             }
         }
+
+
     }
 }

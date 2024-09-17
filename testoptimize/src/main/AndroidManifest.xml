@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name=".MyApplication"
@@ -14,6 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity
+            android:name=".testBlockCanary.TestBlockActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TestProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".TestLoggerActivity"
             android:exported="false" />
@@ -36,7 +42,23 @@
         <service
             android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
             android:label="dexopt"
-            android:process=":dexopt"></service>
+            android:process=":dexopt"
+            android:exported="true"></service>
+
+        <activity
+            android:name="com.github.moduth.blockcanary.ui.DisplayActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/block_canary_icon"
+            android:label="@string/block_canary_display_activity_label"
+            android:taskAffinity="com.github.moduth.blockcanary"
+            android:theme="@style/block_canary_BlockCanary.Base" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

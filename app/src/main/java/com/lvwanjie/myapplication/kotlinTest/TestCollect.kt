@@ -15,6 +15,7 @@ class TestCollect {
 
     fun getList(){
         var list = listOf<String>("","")
+        list.isNullOrEmpty()
         var mutableList = mutableListOf<String>()
         var a =  arrayListOf<String>()
 

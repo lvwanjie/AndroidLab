@@ -1,5 +1,8 @@
 package com.lvwanjie.myapplication.kotlinTest.testYuFa
 
+/**
+ * 密封类
+ */
 sealed class Shape {
     class Circle(val radius: Double) : Shape()
     class Square(val sideLength: Double) : Shape()

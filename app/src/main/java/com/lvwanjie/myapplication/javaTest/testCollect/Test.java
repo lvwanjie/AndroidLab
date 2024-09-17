@@ -3,19 +3,25 @@ package com.lvwanjie.myapplication.javaTest.testCollect;
 import android.os.Build;
 import android.util.ArrayMap;
 import android.util.Log;
+import android.util.LongSparseArray;
 import android.util.LruCache;
 import android.util.SparseArray;
 
 import androidx.annotation.NonNull;
 
+import com.lvwanjie.myapplication.androidTest.thirdLib.testDagger.C;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 import java.util.Spliterator;
+import java.util.Vector;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -42,6 +48,7 @@ class Test {
         hashMap.put("","");
         hashMap.remove("");
         hashMap.get("");
+        hashMap.put(0,"");
     }
 
 
@@ -49,13 +56,18 @@ class Test {
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
         concurrentHashMap.put("","");
         concurrentHashMap.get("");
+//        Integer i = Integer.valueOf(1);
+//        i.intValue();
 
     }
 
     public static void testSparseArray(){
         SparseArray sparseArray = new SparseArray();
+        LongSparseArray sparseArray1 = new LongSparseArray();
         sparseArray.put(0,"");
+        sparseArray.put(3,"c");
         sparseArray.get(0);
+
         sparseArray.size();
     }
 
@@ -81,6 +93,11 @@ class Test {
         HashSet set = new HashSet();
         set.add(new Object());
 
+    }
+
+    public void testColSync(){
+        List list = new ArrayList();
+        Collections.synchronizedList(list);
     }
 
 
@@ -111,6 +128,12 @@ class Test {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void testCopyOnWriteArrayList(){
+        CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
+        copyOnWriteArrayList.add("");
+        copyOnWriteArrayList.get(0);
     }
 
     public static void testArrayList(){
@@ -148,6 +171,11 @@ class Test {
         LinkedList list = new LinkedList();
         list.add("");
         list.get(0);
+    }
+
+    public static void testV(){
+        Vector vector = new Vector();
+        vector.add("");
     }
 
 

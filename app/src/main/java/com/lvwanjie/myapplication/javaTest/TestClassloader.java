@@ -1,5 +1,7 @@
 package com.lvwanjie.myapplication.javaTest;
 
+import dalvik.system.DexClassLoader;
+
 class TestClassloader {
 
 
@@ -12,6 +14,15 @@ class TestClassloader {
 
         TestClassloader.class.getClassLoader().loadClass("");
         Class.forName("");
+
+        DexClassLoader dexClassLoader = null;
+        try {
+            Class clz =  dexClassLoader.loadClass("");
+
+
+        }catch (Exception e){
+
+        }
 
     }
 }

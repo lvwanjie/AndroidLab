@@ -35,6 +35,27 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".androidTest.widget.testSurfaceView.TestSurfaceViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.widget.TestVsyncActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.widget.testLayoutFactory.TestLayoutFactory"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.jetpack.testFlow.TestFlowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.other.testSocket.TestSocketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.other.testMessagener.TestMessengerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.other.testResource.TestResourceActivity"
+            android:exported="false" />
+        <activity
             android:name=".androidTest.widget.testbitmap.TestBitmapActivity"
             android:exported="false" />
         <activity

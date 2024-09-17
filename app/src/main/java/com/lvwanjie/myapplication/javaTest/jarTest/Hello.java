@@ -20,4 +20,12 @@ public class Hello {
         System.out.println("hello");
         Tom.speak();
     }
+
+    interface A{
+        void b();
+    }
+
+    public void setA(A a){
+
+    }
 }

@@ -8,6 +8,7 @@ class MyList<C> {
         MyList<A> myList = my(new MyList<A>());
         int a = myList.e.a;
 
+
     }
 
     public  C get(){

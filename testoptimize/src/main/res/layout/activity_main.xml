@@ -15,4 +15,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:onClick="btClick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start_profile_page"
+        android:onClick="startProfilePage"/>
+
+    <Button
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="140dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start_block_canary_page"
+        android:onClick="startBlockCanaryPage"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

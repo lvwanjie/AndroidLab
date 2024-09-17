@@ -11,7 +11,7 @@ public class DynamicProxy {
     public static void main(String args[]){
 
         LogHandler logHandler = new LogHandler(new Vendor());
-        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+        System.getProperties().put("sun.misc.ProxayGenerator.saveGeneratedFiles", "true");
         ISell i = (ISell) Proxy.newProxyInstance(ISell.class.getClassLoader(),new Class[]{ISell.class},logHandler);
         i.sell();
 
@@ -27,7 +27,7 @@ public class DynamicProxy {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            return null;
+            return method.invoke(proxy,args);
         }
     }
 
@@ -42,6 +42,7 @@ public class DynamicProxy {
         public void ad() {
 
         }
+
     }
 
     public interface ISell{
@@ -49,5 +50,10 @@ public class DynamicProxy {
         void sell();
 
         void ad();
+    }
+
+    public void a(){
+//        Method method;
+//        method.invoke()
     }
 }

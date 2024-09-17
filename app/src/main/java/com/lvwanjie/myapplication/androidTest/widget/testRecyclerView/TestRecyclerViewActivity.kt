@@ -24,6 +24,9 @@ class TestRecyclerViewActivity : AppCompatActivity() {
 
         adapter = RcAdapter(this)
         recyclerView.adapter = adapter
+        var l =LinearLayoutManager(this)
+//        recyclerView.addOnChildAttachStateChangeListener()
+
     }
 
     fun btClick(view: View){

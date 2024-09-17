@@ -52,6 +52,8 @@ public class MainActivity extends FragmentActivity {
     public<T> void  a(Class<T> t){
         Intent intent = new Intent(this,t);
 
+
+
     }
 
 
@@ -126,7 +128,7 @@ public class MainActivity extends FragmentActivity {
     protected void onPause() {
         super.onPause();
         try {
-            Thread.sleep(1000);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

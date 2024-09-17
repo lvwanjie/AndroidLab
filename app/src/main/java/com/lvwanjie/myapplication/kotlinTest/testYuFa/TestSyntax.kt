@@ -1,5 +1,8 @@
 package com.lvwanjie.myapplication.kotlinTest.testYuFa
 
+/**
+ * 解构函数
+ */
 import com.lvwanjie.myapplication.androidTest.component.Test
 
 class TestSyntax {

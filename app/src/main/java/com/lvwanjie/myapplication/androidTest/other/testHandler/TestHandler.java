@@ -23,13 +23,26 @@ public class TestHandler {
             }
         },1000);
 
+//        Handler asyc = new Handler(null,true);
+        Message message = new Message();
+//        message.setAsynchronous(true);
         handler.sendMessage(Message.obtain());
         Looper.loop();
         Looper.myLooper().quit();
         Looper.myLooper().quitSafely();
-        HandlerThread handlerThread;
+
         handler.removeCallbacksAndMessages(null);
         handler.removeMessages(0);
+
+        HandlerThread handlerThread = new HandlerThread("");
+        Handler handler1 = new Handler(handlerThread.getLooper());
+        handler1.post(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+        handlerThread.getLooper();
     }
 
     public static void testIdle(){

@@ -28,7 +28,7 @@ public class MyInnerView extends LinearLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.i(TestTouchEventActivity.TAG, "inner_dispatchTouchEvent: "+getActionStr(ev.getAction()));
+        Log.i(TestTouchEventActivity.TAG, "inner_dispatchTouchEvent: "+getActionStr(ev.getAction())+"ev.x="+ev.getX());
         return super.dispatchTouchEvent(ev);
     }
 

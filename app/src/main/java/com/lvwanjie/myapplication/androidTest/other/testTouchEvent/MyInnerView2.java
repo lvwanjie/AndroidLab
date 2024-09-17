@@ -39,9 +39,17 @@ public class MyInnerView2 extends LinearLayout {
         return super.onInterceptTouchEvent(ev);
     }
 
+    boolean isFirstCom = false;
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.i(TestTouchEventActivity.TAG, "inner_2_onTouchEvent: "+getActionStr(event.getAction()));
+        if(event.getAction()  == MotionEvent.ACTION_MOVE){
+            if(!isFirstCom){
+                isFirstCom = true;
+                getParent().requestDisallowInterceptTouchEvent(false);
+                return true;
+            }
+        }
         return true;
     }
 

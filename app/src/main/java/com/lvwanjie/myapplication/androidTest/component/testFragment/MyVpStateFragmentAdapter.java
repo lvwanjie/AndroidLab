@@ -1,5 +1,7 @@
 package com.lvwanjie.myapplication.androidTest.component.testFragment;
 
+import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -20,5 +22,10 @@ public class MyVpStateFragmentAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         return 0;
+    }
+
+    @Override
+    public void setPrimaryItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+        super.setPrimaryItem(container, position, object);
     }
 }
