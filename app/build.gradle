@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.protobuf'
+
 //    id 'dagger.hilt.android.plugin'
 
 }
@@ -38,6 +40,15 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    sourceSets {
+        main {
+            //实际测试指不指定无所谓，不影响 Java 文件生成
+            proto {
+                srcDir 'src/main/proto'
+            }
+        }
+    }
+
     buildFeatures {
         dataBinding = true
     }
@@ -59,6 +70,25 @@ android {
 //        }
 //    }
 }
+
+protobuf {
+    //配置 protoc 编译器
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.19.2'
+    }
+    //配置生成目录，编译后会在 build 的目录下生成对应的java文件
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                remove java
+            }
+            task.builtins {
+                java {}
+            }
+        }
+    }
+}
+
 
 dependencies {
     implementation fileTree(dir:'libs')
@@ -118,6 +148,9 @@ dependencies {
     implementation project(':myAnnotation')
     //    implementation "com.google.dagger:hilt-android:2.28-alpha"
     implementation 'com.google.android:flexbox:1.0.0'
+
+    implementation 'com.google.protobuf:protobuf-java:3.19.2'
+
 
 //    implementation "com.google.dagger:hilt-android:2.28-alpha"
 //    kapt "com.google.dagger:hilt-android-compiler:2.28-alpha"

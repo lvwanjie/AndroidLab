@@ -1,0 +1,25 @@
+syntax  = "proto3";
+
+package abc;
+
+
+message weather{
+  int32 query = 1;
+  season s = 2;
+
+  map<string,string> m = 3;
+}
+
+enum season{
+
+  option allow_alias = true;
+
+  SPRING = 0;
+
+  SUMMER = 1;
+
+  FALL = 2;
+  AUTUMN = 2;
+
+  WINTER = 3;
+}

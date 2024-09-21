@@ -27,4 +27,8 @@ public class MyVpFragmentAdapter extends FragmentPagerAdapter {
         return 0;
     }
 
+    @Override
+    public int getItemPosition(@NonNull Object object) {
+        return super.getItemPosition(object);
+    }
 }
