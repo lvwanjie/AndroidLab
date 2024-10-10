@@ -1,0 +1,3 @@
+*
+!../gateway_unary_httpx.proto
+!.gitignore

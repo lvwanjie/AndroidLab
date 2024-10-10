@@ -17,6 +17,8 @@ public class PageInfo {
             "com.lvwanjie.myapplication.androidTest.widget.testRecyclerView.TestRcMaiDianActivity",
             "com.lvwanjie.myapplication.androidTest.testPlugin.TestClassLoaderActivity",
             "com.lvwanjie.myapplication.kotlinTest.testCoroutines.TestCoroutines2Activity",
+            "com.lvwanjie.myapplication.androidTest.widget.testTextView.TestTextViewActivity",
+            "com.lvwanjie.myapplication.androidTest.widget.testActivityTransAnim.TestTransAnimActivity",
             "com.lvwanjie.myapplication.androidTest.widget.testFlexBox.TestFlexboxActivity",
             "com.lvwanjie.myapplication.androidTest.other.testmeasure.TestView2Activity",
             "com.lvwanjie.myapplication.androidTest.other.testLife.TestLife1Activity",

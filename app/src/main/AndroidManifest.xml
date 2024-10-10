@@ -35,6 +35,21 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".androidTest.widget.testVP2.TestVp2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.widget.ExpandTextview.TestExpandTvActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.widget.testTextView.TestTextViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.widget.testActivityTransAnim.TransAnim2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".androidTest.widget.testActivityTransAnim.TestTransAnimActivity"
+            android:exported="false" />
+        <activity
             android:name=".androidTest.other.protoBufT.ProtoBufActivity"
             android:exported="false" />
         <activity
