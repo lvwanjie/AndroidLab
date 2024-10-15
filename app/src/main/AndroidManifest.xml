@@ -35,6 +35,9 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".androidTest.widget.testMerge.TestMergeActivity"
+            android:exported="false" />
+        <activity
             android:name=".androidTest.widget.testVP2.TestVp2Activity"
             android:exported="false" />
         <activity
