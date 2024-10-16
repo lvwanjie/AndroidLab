@@ -15,6 +15,7 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_page2"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:clipToPadding="false"
@@ -23,5 +24,26 @@
         android:clipChildren="false"
 
         />
+
+    <View
+        android:id="@+id/view_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#7f000000"
+
+        app:layout_constraintTop_toTopOf="@id/view_page2"
+        app:layout_constraintBottom_toBottomOf="@id/view_page2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/view_page2"/>
+
+    <View
+        android:id="@+id/view_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#7f000000"
+        app:layout_constraintTop_toTopOf="@id/view_page2"
+        app:layout_constraintBottom_toBottomOf="@id/view_page2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/view_page2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

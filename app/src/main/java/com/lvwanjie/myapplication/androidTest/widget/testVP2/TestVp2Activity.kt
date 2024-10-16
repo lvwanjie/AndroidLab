@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -26,6 +27,14 @@ class TestVp2Activity : AppCompatActivity() {
         findViewById(R.id.view_page2)
     }
 
+    private val viewLeft:View by lazy {
+        findViewById(R.id.view_left)
+    }
+
+    private val viewR:View by lazy {
+        findViewById(R.id.view_right)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test_vp2)
@@ -38,6 +47,20 @@ class TestVp2Activity : AppCompatActivity() {
         viewPage2.addItemDecoration(object :RecyclerView.ItemDecoration(){
 
         })
+
+        viewLeft.setOnClickListener{
+           var curitem = viewPage2.currentItem
+            if(curitem > 0){
+                viewPage2.setCurrentItem(curitem -1,true)
+//               viewPage2.currentItem = curitem -1;
+            }
+        }
+        viewR.setOnClickListener{
+            var curitem = viewPage2.currentItem
+            if(curitem < (viewPage2.adapter?.itemCount?:0) -1){
+                viewPage2.currentItem = curitem +1
+            }
+        }
 
         var recyclerview = viewPage2.getChildAt(0) as RecyclerView
         recyclerview.overScrollMode = View.OVER_SCROLL_NEVER
@@ -238,6 +261,9 @@ class MyVH(view: View) :RecyclerView.ViewHolder(view){
         }else{
             itemView.setBackgroundColor(Color.parseColor("#F00000"))
 
+        }
+        itemView.setOnClickListener{
+            Toast.makeText(itemView.context,"$position",Toast.LENGTH_SHORT).show()
         }
     }
 }
