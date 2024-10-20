@@ -35,6 +35,9 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
         <activity
+            android:name=".androidTest.widget.testRecyclerView.testRecyclerAnim.TestRecyclerViewAnimActivity"
+            android:exported="false" />
+        <activity
             android:name=".androidTest.widget.testSurfaceView.TestSurfaceViewActivity"
             android:exported="false" />
         <activity
