@@ -42,6 +42,7 @@ public class GalleryViewPager extends ViewPager {
                 int index = (Integer) view.getTag();
                 if (getCurrentItem() != index) {
                     setCurrentItem(index);
+                    return true;
                 }
             }
         }
