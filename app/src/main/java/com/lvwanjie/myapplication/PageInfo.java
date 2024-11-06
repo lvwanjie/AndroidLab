@@ -5,6 +5,7 @@ import androidx.annotation.ColorInt;
 public class PageInfo {
 
     public static String pages[] = {
+            "com.lvwanjie.myapplication.androidTest.widget.testAudio.TestAudioActivity",
             "com.lvwanjie.myapplication.androidTest.testWebView.TestWebViewActivity",
             "com.lvwanjie.myapplication.androidTest.widget.testSlideDrawer.TestSlideDActivity",
             "com.lvwanjie.myapplication.javaTest.testProgress.TestProgressActivity",

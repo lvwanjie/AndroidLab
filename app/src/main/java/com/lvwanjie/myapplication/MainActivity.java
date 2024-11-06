@@ -46,7 +46,7 @@ public class MainActivity extends FragmentActivity {
         LinearLayoutManager linearLayoutManager;
 
         recyclerView.setAdapter(new MyAdapter());
-//        requestPermissions(new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAPTURE_AUDIO_OUTPUT},0);
+        requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAPTURE_AUDIO_OUTPUT},0);
     }
 
     public<T> void  a(Class<T> t){

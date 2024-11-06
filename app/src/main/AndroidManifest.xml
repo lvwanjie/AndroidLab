@@ -21,8 +21,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <uses-permission
         android:name="android.permission.CAPTURE_VIDEO_OUTPUT"
         tools:ignore="ProtectedPermissions" />
@@ -36,6 +35,9 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true"
         tools:replace="android:allowBackup">
+        <activity
+            android:name=".androidTest.widget.testAudio.TestAudioActivity"
+            android:exported="false" />
         <activity
             android:name=".androidTest.testWebView.TestWebViewActivity"
             android:exported="false" />
